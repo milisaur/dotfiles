@@ -1,0 +1,1 @@
+/home/mili/.dotfiles/home/mili/home.nix
