@@ -92,14 +92,10 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-     hyprconf = "nano ~/.config/hypr/hyprland.conf";
 	 ll = "ls -l";
      update = "sudo nixos-rebuild switch --flake ~/.dotfiles#ankylosaurus";
 	 upgrade = "sudo nixos-rebuild --upgrade --flake ~/.dotfiles#ankylosaurus";
 	 home = "cd ~/";
-	 homeconf = "nano ~/.config/home-manager/home.nix";
-	 nixconf = "sudo nano /etc/nixos/configuration.nix";
-	 pythonP = "cd /run/media/skadi/Volume/Dokumente/Python";
 	 home-update = "home-manager switch";
 	 home-build = "home-manager build";
 	 waybar-reload = "pkill waybar && hyprctl dispatch exec waybar";
