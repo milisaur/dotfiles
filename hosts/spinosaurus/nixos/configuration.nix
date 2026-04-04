@@ -28,6 +28,9 @@
 
   programs.thunderbird.enable = true;
 
+  programs.zsh.enable = true;
+  users.users.mili.shell = pkgs.zsh;
+
   programs.steam = {
     enable = true;
   };
