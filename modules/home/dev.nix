@@ -30,6 +30,9 @@
 
     direnv
     nix-direnv
+
+    playerctl
+    brightnessctl
   ];
 
   programs.direnv.enable = true;
