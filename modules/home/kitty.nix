@@ -5,6 +5,7 @@
     enable = true;
 
     settings = {
+      font_family = "JetBrainsMono Nerd Font";
       font_size = 10;
       enable_audio_bell = false;
       confirm_os_window_close = 0;

@@ -12,6 +12,7 @@
     ../../../modules/home/hyprland/base.nix
     ../../../modules/home/hyprland/spinosaurus.nix
     ../../../modules/home/waybar.nix
+    ../../../modules/home/fonts.nix
   ];
 
   home.username = "mili";

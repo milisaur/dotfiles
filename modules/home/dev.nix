@@ -14,6 +14,7 @@
     mako
     networkmanagerapplet
 
+    pavucontrol
     libnotify
 
     curl
