@@ -9,7 +9,8 @@
     ../../../modules/home/zsh.nix
     ../../../modules/home/nvim.nix
     ../../../modules/home/kitty.nix
-    ../../../modules/home/hyprland.nix
+    ../../../modules/home/hyprland/base.nix
+    ../../../modules/home/hyprland/spinosaurus.nix
     ../../../modules/home/waybar.nix
   ];
 

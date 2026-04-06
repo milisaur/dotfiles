@@ -7,20 +7,6 @@
     settings = {
       "$mod" = "SUPER";
 
-      monitor = ",preferred,auto,1";
-
-      exec-once = [
-        "waybar"
-      ];
-
-      input = {
-        kb_layout = "de";
-        follow_mouse = 1;
-        touchpad = {
-          natural_scroll = false;
-        };
-      };
-
       general = {
         gaps_in = 5;
         gaps_out = 10;
@@ -84,26 +70,10 @@
         "$mod SHIFT, S, movetoworkspace, special:magic"
       ];
 
-    bindm = [
-       "$mod, mouse:272, movewindow"
+      bindm = [
+        "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
-    ];
-
-    bindel = [
-        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-        ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
-    ];
-
-    bindl = [
-        ",XF86AudioNext, exec, playerctl next"
-        ",XF86AudioPause, exec, playerctl play-pause"
-        ",XF86AudioPlay, exec, playerctl play-pause"
-        ",XF86AudioPrev, exec, playerctl previous"
-    ];    
+      ];
     };
   };
 }
