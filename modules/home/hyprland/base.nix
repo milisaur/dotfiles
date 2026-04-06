@@ -7,6 +7,21 @@
     settings = {
       "$mod" = "SUPER";
 
+      exec-once = [
+       "waybar"
+       "mako"
+       "nm-applet --indicator"
+      ];
+      
+      misc = {
+        disable_hyprland_logo = true;
+      };  
+
+      windowrulev2 = [
+        "float,class:^(pavucontrol)$"
+        "float,class:^(nm-connection-editor)$"
+      ];
+      
       general = {
         gaps_in = 5;
         gaps_out = 10;
@@ -28,6 +43,8 @@
         "$mod, C, killactive"
         "$mod SHIFT, E, exec, hyprctl dispatch exit"
         "$mod, R, exec, rofi -show drun"
+       
+        "$mod, E, exec, kitty -e yazi"
 
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"

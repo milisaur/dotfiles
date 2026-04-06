@@ -8,7 +8,13 @@
     gnupg
     nano
     zsh
+    
     rofi
+    mako
+    networkmanagerapplet
+    yazi
+
+    libnotify
 
     curl
     wget
