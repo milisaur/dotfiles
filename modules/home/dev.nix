@@ -9,10 +9,10 @@
     nano
     zsh
     
+    yazi
     rofi
     mako
     networkmanagerapplet
-    yazi
 
     libnotify
 
