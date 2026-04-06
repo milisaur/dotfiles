@@ -3,6 +3,10 @@
 let
   rPkgs = with pkgs.rPackages; [
     tidyverse
+    languageserver
+    data_table
+    jsonlite
+    devtools
   ];
 
   myR = pkgs.rWrapper.override {

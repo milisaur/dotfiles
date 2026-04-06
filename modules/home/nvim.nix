@@ -36,16 +36,39 @@
         servers = {
           gopls.enable = true;
           pyright.enable = true;
-          r_language_server.enable = true;
+          r_language_server = {
+	    enable = true;
+	    package = null;
+          };
         };
       };
 
-      cmp = {
-        enable = true;
-        autoEnableSources = true;
-      };
+    cmp = {
+     enable = true;
+      autoEnableSources = true;
+      autoLoad = true;
 
-      cmp-nvim-lsp.enable = true;
+      settings = {
+        completion = {
+        completeopt = "menu,menuone,noinsert";
+       };
+
+        mapping = {
+          "<C-Space>" = "cmp.mapping.complete()";
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+         "<Tab>" = "cmp.mapping.select_next_item()";
+         "<S-Tab>" = "cmp.mapping.select_prev_item()";
+       };
+
+       sources = [
+          { name = "nvim_lsp"; }
+         { name = "path"; }
+         { name = "buffer"; }
+        ];
+      };
+    };
+
+    cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
 
@@ -82,6 +105,54 @@
         key = "<leader>w";
         action = "<cmd>w<CR>";
       }
-    ];
+      {
+        mode = "n";
+        key = "gd";
+        action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+      }
+      {
+        mode = "n";
+        key = "K";
+        action = "<cmd>lua vim.lsp.buf.hover()<CR>";
+      }
+      {
+        mode = "n";
+        key = "gr";
+        action = "<cmd>lua vim.lsp.buf.references()<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>rn";
+        action = "<cmd>lua vim.lsp.buf.rename()<CR>";
+      }
+      {
+        mode = "n";
+        key = "[d";
+        action = "<cmd>lua vim.diagnostic.goto_prev()<CR>";
+      }
+      {
+        mode = "n";
+        key = "]d";
+        action = "<cmd>lua vim.diagnostic.goto_next()<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>e";
+        action = "<cmd>lua vim.diagnostic.open_float()<CR>";
+      }
+      ];
+
+    autoCmd = [
+      {
+        event = [ "BufWritePre" ];
+        callback = {
+         __raw = ''
+            function()
+             require("conform").format({ async = false })
+           end
+          '';
+        };
+     }
+  ];
   };
 }

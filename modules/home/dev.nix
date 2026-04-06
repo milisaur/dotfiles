@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    neovim
     alacritty
     git
     git-crypt
