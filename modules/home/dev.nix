@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    alacritty
+    kitty
     git
     git-crypt
     gnupg

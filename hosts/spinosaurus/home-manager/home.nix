@@ -8,11 +8,16 @@
     ../../../modules/home/r.nix
     ../../../modules/home/zsh.nix
     ../../../modules/home/nvim.nix
+    ../../../modules/home/kitty.nix
   ];
 
   home.username = "mili";
   home.homeDirectory = "/home/mili";
   home.stateVersion = "25.11"; # Please read the comment before changing.
+
+  home.sessionVariables = {
+    TERMINAL = "kitty";
+  };
 
   programs.home-manager.enable = true;
 }
