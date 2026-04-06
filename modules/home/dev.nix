@@ -8,6 +8,7 @@
     gnupg
     nano
     zsh
+    rofi
 
     curl
     wget

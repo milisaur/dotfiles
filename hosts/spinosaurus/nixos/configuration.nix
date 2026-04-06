@@ -20,6 +20,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+
+  networking.networkmanager.enable = true;
+
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
 
@@ -27,9 +30,20 @@
   users.extraGroups.vboxusers.members = [ "mili" ];
 
   programs.thunderbird.enable = true;
-
   programs.zsh.enable = true;
   users.users.mili.shell = pkgs.zsh;
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+  ];
+
+  services.dbus.enable = true;
 
   programs.steam = {
     enable = true;
@@ -40,8 +54,12 @@
   environment.systemPackages = with pkgs; [
     git
     gparted
-    vulkan-tools
     vim
     wget
+    
+    waybar
+    wl-clipboard
+    grim
+    slurp
   ];
 }
