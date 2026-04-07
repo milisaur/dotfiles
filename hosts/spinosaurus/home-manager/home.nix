@@ -14,6 +14,7 @@
     ../../../modules/home/waybar.nix
     ../../../modules/home/fonts.nix
     ../../../modules/home/rofi.nix
+    ../../../modules/home/hyprland/wallpaper.nix
   ];
 
   home.username = "mili";

@@ -11,6 +11,7 @@
        "waybar"
        "mako"
        "nm-applet --indicator"
+       "hyprpaper"
       ];
       
       misc = {
