@@ -11,6 +11,7 @@
     
     yazi
     rofi
+    papirus-icon-theme
     mako
     networkmanagerapplet
 
