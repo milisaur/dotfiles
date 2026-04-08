@@ -12,6 +12,7 @@
        "mako"
        "nm-applet --indicator"
        "hyprpaper"
+       "hypridle"
       ];
       
       misc = {
