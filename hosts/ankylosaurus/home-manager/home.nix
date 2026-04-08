@@ -8,7 +8,7 @@
     ../../../modules/home/nvim.nix
     ../../../modules/home/kitty.nix
     ../../../modules/home/hyprland/base.nix
-    ../../../modules/home/hyprland/spinosaurus.nix
+    ../../../modules/home/hyprland/ankylosaurus.nix
     ../../../modules/home/waybar.nix
     ../../../modules/home/fonts.nix
     ../../../modules/home/rofi.nix
