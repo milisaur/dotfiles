@@ -44,7 +44,7 @@
         "$mod SHIFT, x, exec, hyprctl dispatch exit"
         "$mod, Q, exec, kitty"
         "$mod, C, killactive"
-        "$mod SHIFT, E, exec, hyprctl dispatch exit"
+        "$mod SHIFT, Q, exec, powermenu"
         "$mod, R, exec, rofi -show drun"
        
         "$mod, E, exec, kitty -e yazi"
