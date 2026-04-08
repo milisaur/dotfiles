@@ -1,6 +1,4 @@
-{ inputs, ... }:
-
-{
+{inputs, ...}: {
   imports = [
     inputs.nixvim.homeModules.nixvim
     ../../../modules/home/dev.nix
@@ -17,6 +15,7 @@
     ../../../modules/home/hyprland/wallpaper.nix
     ../../../modules/home/hyprland/lock.nix
     ../../../modules/home/hyprland/idle.nix
+    ../../../modules/home/mako.nix
   ];
 
   home.username = "mili";

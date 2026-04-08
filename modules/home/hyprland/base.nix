@@ -51,7 +51,8 @@
         "$mod, M, exec, hyprlock"
 
         ",Print, exec, grim -g \"$(slurp)\" - | wl-copy"
-        "SHIFT, Print, exec, sh -c 'mkdir -p ~/Pictures/Screenshots && grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png':wl-copy"
+        "SHIFT, Print, exec, sh -c 'mkdir -p ~/Pictures/Screenshots && grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'"
+        ",Insert, exec, sh -c 'mkdir -p ~/Pictures/Screenshots && grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'"
 
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"
