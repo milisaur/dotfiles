@@ -13,6 +13,7 @@
        "nm-applet --indicator"
        "hyprpaper"
        "hypridle"
+       "gnome-keyring-daemon --start --components=secrets"
       ];
       
       misc = {

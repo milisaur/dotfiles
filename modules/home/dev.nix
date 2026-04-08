@@ -16,6 +16,9 @@
     mako
     networkmanagerapplet
 
+    gnome-keyring
+    seahorse
+
     pavucontrol
     libnotify
 
@@ -39,6 +42,7 @@
 
     direnv
     nix-direnv
+    alejandra
 
     playerctl
     brightnessctl

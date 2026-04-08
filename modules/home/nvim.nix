@@ -79,6 +79,7 @@
             go = [ "gofmt" ];
             python = [ "black" ];
             r = [ "styler" ];
+            nix = [ "alejandra" ];
           };
         };
       };
