@@ -16,6 +16,7 @@
     ../../../modules/home/hyprland/lock.nix
     ../../../modules/home/hyprland/idle.nix
     ../../../modules/home/mako.nix
+    ../../../modules/home/gaming.nix
   ];
 
   home.username = "mili";

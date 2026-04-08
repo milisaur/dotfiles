@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../../modules/common.nix
@@ -20,14 +22,13 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-
   networking.networkmanager.enable = true;
 
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
 
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "mili" ];
+  users.extraGroups.vboxusers.members = ["mili"];
 
   programs.thunderbird.enable = true;
   programs.zsh.enable = true;
@@ -49,6 +50,13 @@
     enable = true;
   };
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  programs.steam.gamescopeSession.enable = true;
+
   services.resolved.enable = true;
 
   services.gnome.gnome-keyring.enable = true;
@@ -58,7 +66,8 @@
     gparted
     vim
     wget
-    
+    vulkan-tools
+
     waybar
     wl-clipboard
     grim
