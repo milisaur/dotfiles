@@ -1,4 +1,14 @@
-{...}: {
+{pkgs, ...}: {
+  home.packages = [
+    (pkgs.writeShellScriptBin "scratchpad-toggle" ''
+      if hyprctl clients | grep -q "class: scratchpad"; then
+        hyprctl dispatch togglespecialworkspace scratchpad
+      else
+        kitty --class scratchpad --title scratchpad
+      fi
+    '')
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -21,6 +31,11 @@
       windowrulev2 = [
         "float,class:^(pavucontrol)$"
         "float,class:^(nm-connection-editor)$"
+
+        "workspace special:scratchpad silent,class:^(scratchpad)$"
+        "float,class:^(scratchpad)$"
+        "size 1200 700,class:^(scratchpad)$"
+        "center,class:^(scratchpad)$"
       ];
 
       general = {
@@ -47,6 +62,8 @@
         "$mod, R, exec, rofi -show drun"
 
         "$mod, E, exec, kitty -e yazi"
+
+        "$mod, T, exec, scratchpad-toggle"
 
         "$mod, M, exec, hyprlock"
 
