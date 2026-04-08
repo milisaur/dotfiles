@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -8,23 +6,23 @@
       "$mod" = "SUPER";
 
       exec-once = [
-       "waybar"
-       "mako"
-       "nm-applet --indicator"
-       "hyprpaper"
-       "hypridle"
-       "gnome-keyring-daemon --start --components=secrets"
+        "waybar"
+        "mako"
+        "nm-applet --indicator"
+        "hyprpaper"
+        "hypridle"
+        "gnome-keyring-daemon --start --components=secrets"
       ];
-      
+
       misc = {
         disable_hyprland_logo = true;
-      };  
+      };
 
       windowrulev2 = [
         "float,class:^(pavucontrol)$"
         "float,class:^(nm-connection-editor)$"
       ];
-      
+
       general = {
         gaps_in = 5;
         gaps_out = 10;
@@ -47,10 +45,13 @@
         "$mod, C, killactive"
         "$mod SHIFT, Q, exec, powermenu"
         "$mod, R, exec, rofi -show drun"
-       
+
         "$mod, E, exec, kitty -e yazi"
 
         "$mod, M, exec, hyprlock"
+
+        ",Print, exec, grim -g \"$(slurp)\" - | wl-copy"
+        "SHIFT, Print, exec, sh -c 'mkdir -p ~/Pictures/Screenshots && grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png':wl-copy"
 
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"
