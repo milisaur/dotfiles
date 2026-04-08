@@ -48,6 +48,8 @@
        
         "$mod, E, exec, kitty -e yazi"
 
+        "$mod, M, exec, hyprlock"
+
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"
         "$mod, k, movefocus, u"
