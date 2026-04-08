@@ -25,28 +25,61 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+
+  networking.networkmanager.enable = true;
+
+  services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["mili"];
+
+  programs.thunderbird.enable = true;
+  programs.zsh.enable = true;
+  users.users.mili.shell = pkgs.zsh;
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
 
-  xdg.portal = {
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+  ];
+
+  services.dbus.enable = true;
+
+  programs.steam = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  programs.thunderbird.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
-  environment.systemPackages = with pkgs;
-    let
-      rstudio-packages = rstudioWrapper.override {
-        packages = with rPackages; [
-          tidyverse
-          sjPlot
-        ];
-      };
-    in [
-      bitwarden-desktop
+  programs.steam.gamescopeSession.enable = true;
+
+  services.resolved.enable = true;
+
+  services.gnome.gnome-keyring.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    git
+    gparted
+    vim
+    wget
+    vulkan-tools
+
+    waybar
+    wl-clipboard
+    grim
+    slurp
+
+
+
+          bitwarden-desktop
       discord-ptb
       git
       gparted
@@ -63,9 +96,6 @@
       pavucontrol
       prismlauncher
       protonup-qt
-      rofi
-      rstudio-packages
-      signal-desktop
       simple-scan
       spotify
       texliveSmall
@@ -76,14 +106,6 @@
       waybar
       wine
       zsh-powerlevel10k
-    ];
 
-  programs.steam = {
-    enable = true;
-  };
-
-  services.resolved.enable = true;
-
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-}
+      ];
+      }
