@@ -37,7 +37,7 @@ It separates host-specific configuration from shared components while keeping th
 │       ├── zsh.nix
 │       └── ...
 │   └── common.nix
-
+```
 
 ## Structure
 
