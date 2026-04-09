@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     kitty
     git
@@ -9,7 +7,7 @@
     nano
     zsh
     wev
-    
+
     yazi
     rofi
     papirus-icon-theme
@@ -32,6 +30,9 @@
     bat
     btop
     lazygit
+
+    texliveFull
+    texstudio
 
     go
     gopls

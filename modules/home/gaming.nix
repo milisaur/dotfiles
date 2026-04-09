@@ -4,8 +4,4 @@
     mangohud
     goverlay
   ];
-
-  programs.vesktop = {
-    enable = true;
-  };
 }

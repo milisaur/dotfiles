@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -22,7 +24,7 @@
   console.keyMap = "de";
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   services.printing.enable = true;
   services.printing.drivers = with pkgs; [
@@ -37,7 +39,7 @@
   };
 
   hardware.sane.enable = true;
-  hardware.sane.extraBackends = with pkgs; [ epkowa ];
+  hardware.sane.extraBackends = with pkgs; [epkowa];
   services.ipp-usb.enable = true;
 
   services.pulseaudio.enable = false;
@@ -52,8 +54,8 @@
   users.users.mili = {
     isNormalUser = true;
     description = "mili";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ kdePackages.kate ];
+    extraGroups = ["networkmanager" "wheel"];
+    packages = with pkgs; [kdePackages.kate];
   };
 
   programs.firefox.enable = true;
@@ -62,6 +64,19 @@
     powerline-fonts
     nerd-fonts.meslo-lg
     font-awesome
+  ];
+
+  environment.sessionVariables = {
+    QT_QPA_PLATFORM = "xcb";
+  };
+
+  environment.systemPackages = with pkgs; [
+    bitwarden-desktop
+    signal-desktop
+    libreoffice
+    discord
+    tor-browser
+    nextcloud-client
   ];
 
   system.stateVersion = "25.11";
