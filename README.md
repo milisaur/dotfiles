@@ -1,6 +1,4 @@
-# dotfiles
-
-Personal NixOS configuration using **flakes** with **Home Manager**, built for a multi-machine setup.
+# Personal NixOS configuration using **flakes** with **Home Manager**, built for a multi-machine setup.
 
 ---
 
@@ -12,6 +10,7 @@ It separates host-specific configuration from shared components while keeping th
 ---
 
 ## Structure
+```text
 
 ├── flake.nix
 ├── flake.lock
@@ -39,6 +38,8 @@ It separates host-specific configuration from shared components while keeping th
 │       └── ...
 │   └── common.nix
 
+
+## Structure
 
 - **hosts/** – machine-specific NixOS configurations  
 - **home/** – Home Manager user configuration  
@@ -78,6 +79,8 @@ Usage:
 Rebuild system
 sudo nixos-rebuild switch --flake .#<hostname>
 
+---
+
 ## Workflow 
 
 git pull
@@ -88,11 +91,15 @@ git push
 
 sudo nixos-rebuild switch --flake .#<hostname>
 
+---
+
 ## Notes
 
 - hardware-configuration.nix is specific to each machine
 - This setup is tailored to my hardware and may require adjustments on other systems
 - Shared modules are gradually being introduced
+
+---
 
 ## License
 
