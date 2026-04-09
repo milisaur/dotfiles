@@ -71,18 +71,24 @@ It separates host-specific configuration from shared components while keeping th
 
 Clone the repository:
 
+```bash
 git clone git@github.com:milisaur/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles/
+```
 
 Usage:
 
-Rebuild system
+Rebuild system:
+
+```bash
 sudo nixos-rebuild switch --flake .#<hostname>
+```
 
 ---
 
 ## Workflow 
 
+```bash
 git pull
 # make changes
 git add .
@@ -90,6 +96,7 @@ git commit -m "message"
 git push
 
 sudo nixos-rebuild switch --flake .#<hostname>
+```
 
 ---
 
