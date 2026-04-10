@@ -10,9 +10,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../../modules/common.nix
-    ../../../modules/sddm.nix
-    ../../../modules/sddm-wayland.nix
-    ../../../modules/plasma.nix
   ];
 
   networking.hostName = "ankylosaurus";
