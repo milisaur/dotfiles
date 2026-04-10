@@ -12,9 +12,6 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   services.xserver.xkb = {
     layout = "de";
@@ -66,9 +63,6 @@
     font-awesome
   ];
 
-  environment.sessionVariables = {
-    QT_QPA_PLATFORM = "xcb";
-  };
 
   environment.systemPackages = with pkgs; [
     bitwarden-desktop

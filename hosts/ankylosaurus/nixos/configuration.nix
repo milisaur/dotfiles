@@ -1,15 +1,19 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../../modules/common.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../../modules/common.nix
+    ../../../modules/sddm.nix
+    ../../../modules/sddm-wayland.nix
+    ../../../modules/plasma.nix
+  ];
 
   networking.hostName = "ankylosaurus";
 
@@ -24,7 +28,6 @@
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
-
 
   networking.networkmanager.enable = true;
 
@@ -77,35 +80,32 @@
     grim
     slurp
 
-
-
-          bitwarden-desktop
-      discord-ptb
-      git
-      gparted
-      home-manager
-      hyprpaper
-      hyprshot
-      kitty
-      libreoffice
-      libnotify
-      lxqt.lxqt-policykit
-      lutris
-      mako
-      networkmanagerapplet
-      pavucontrol
-      prismlauncher
-      protonup-qt
-      simple-scan
-      spotify
-      texliveSmall
-      texstudio
-      tor-browser
-      vulkan-tools
-      vscode
-      waybar
-      wine
-      zsh-powerlevel10k
-
-      ];
-      }
+    bitwarden-desktop
+    discord-ptb
+    git
+    gparted
+    home-manager
+    hyprpaper
+    hyprshot
+    kitty
+    libreoffice
+    libnotify
+    lxqt.lxqt-policykit
+    lutris
+    mako
+    networkmanagerapplet
+    pavucontrol
+    prismlauncher
+    protonup-qt
+    simple-scan
+    spotify
+    texliveSmall
+    texstudio
+    tor-browser
+    vulkan-tools
+    vscode
+    waybar
+    wine
+    zsh-powerlevel10k
+  ];
+}

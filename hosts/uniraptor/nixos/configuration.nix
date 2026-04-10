@@ -1,9 +1,14 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../../modules/common.nix
+    ../../../modules/sddm.nix
+    ../../../modules/sddm-x11.nix
+    ../../../modules/plasma.nix
   ];
 
   networking.hostName = "uniraptor";
