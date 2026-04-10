@@ -12,6 +12,18 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = false;
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "Hyprland";
+        user = "mili";
+      };
+    };
+  };
+  services.desktopManager.plasma6.enable = true;
 
   services.xserver.xkb = {
     layout = "de";
@@ -62,7 +74,6 @@
     nerd-fonts.meslo-lg
     font-awesome
   ];
-
 
   environment.systemPackages = with pkgs; [
     bitwarden-desktop
