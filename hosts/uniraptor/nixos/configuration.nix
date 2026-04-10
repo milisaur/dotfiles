@@ -6,7 +6,7 @@
     ../../../modules/common.nix
   ];
 
-  networking.hostName = "triceratops";
+  networking.hostName = "uniraptor";
 
   environment.systemPackages = with pkgs; [
     git
