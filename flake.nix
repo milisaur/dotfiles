@@ -35,7 +35,8 @@
     in {
       nixosConfigurations = {
         ankylosaurus = mkHost "ankylosaurus";
-        spinosaurus = mkHost "spinosaurus"; 
+        spinosaurus = mkHost "spinosaurus";
+	uniraptor = mkHost "uniraptor";
       };
     };
   }
