@@ -15,6 +15,7 @@
     ../../../modules/home/mako.nix
     ../../../modules/home/gpg.nix
     ../../../modules/home/dev.nix
+    ../../../modules/home/r.nix
   ];
 
   home.username = "mili";
