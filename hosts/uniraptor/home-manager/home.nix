@@ -10,6 +10,7 @@
     ../../../modules/home/kitty.nix
     ../../../modules/home/fonts.nix
     ../../../modules/home/rofi.nix
+    ../../../modules/home/mako.nix
   ];
 
   home.username = "mili";
