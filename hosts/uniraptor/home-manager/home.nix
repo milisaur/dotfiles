@@ -2,6 +2,7 @@
 
 {
   imports = [
+    inputs.nixvim.homeModules.nixvim
     ../../../modules/home/hyprland/uniraptor.nix
     ../../../modules/home/hyprland/base.nix
     ../../../modules/home/waybar.nix
@@ -16,6 +17,7 @@
     ../../../modules/home/gpg.nix
     ../../../modules/home/dev.nix
     ../../../modules/home/r.nix
+    ../../../modules/home/nvim.nix
   ];
 
   home.username = "mili";
