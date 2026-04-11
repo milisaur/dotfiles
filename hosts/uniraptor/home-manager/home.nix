@@ -7,6 +7,7 @@
     ../../../modules/home/waybar.nix
     ../../../modules/home/hyprland/wallpaper.nix
     ../../../modules/home/zsh.nix
+    ../../../modules/home/kitty.nix
   ];
 
   home.username = "mili";
