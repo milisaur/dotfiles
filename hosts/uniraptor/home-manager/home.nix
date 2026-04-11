@@ -5,6 +5,8 @@
     ../../../modules/home/hyprland/uniraptor.nix
     ../../../modules/home/hyprland/base.nix
     ../../../modules/home/waybar.nix
+    ../../../modules/home/hyprland/wallpaper.nix
+    ../../../modules/home/zsh.nix
   ];
 
   home.username = "mili";
