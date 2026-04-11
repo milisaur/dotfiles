@@ -13,9 +13,9 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = false;
+  services.displayManager.sddm.enable = true;
   services.greetd = {
-    enable = true;
+    enable = false;
     settings = {
       default_session = {
         command = "Hyprland";

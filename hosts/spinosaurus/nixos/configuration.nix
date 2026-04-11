@@ -6,9 +6,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../../modules/common.nix
-    ../../../modules/sddm.nix
-    ../../../modules/sddm-wayland.nix
-    ../../../modules/plasma.nix
   ];
 
   networking.hostName = "spinosaurus";
