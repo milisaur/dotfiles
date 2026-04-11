@@ -4,6 +4,7 @@
   imports = [
     ../../../modules/home/hyprland/uniraptor.nix
     ../../../modules/home/hyprland/base.nix
+    ../../../modules/home/waybar.nix
   ];
 
   home.username = "mili";
