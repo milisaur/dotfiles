@@ -9,6 +9,7 @@
     ../../../modules/home/zsh.nix
     ../../../modules/home/kitty.nix
     ../../../modules/home/fonts.nix
+    ../../../modules/home/rofi.nix
   ];
 
   home.username = "mili";
