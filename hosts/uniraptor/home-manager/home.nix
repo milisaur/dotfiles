@@ -13,6 +13,7 @@
     ../../../modules/home/fonts.nix
     ../../../modules/home/rofi.nix
     ../../../modules/home/mako.nix
+    ../../../modules/home/gpg.nix
   ];
 
   home.username = "mili";
