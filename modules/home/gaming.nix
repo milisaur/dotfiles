@@ -3,5 +3,6 @@
     prismlauncher
     mangohud
     goverlay
+    mumble
   ];
 }
