@@ -1,15 +1,14 @@
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../../modules/common.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+    ../../../modules/common.nix
+  ];
 
- 
   networking.hostName = "uniraptor"; # Define your hostname.
-
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -23,11 +22,16 @@
     LC_TIME = "en_US.UTF-8";
   };
 
- 
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+
+  programs.thunderbird.enable = true;
+
+  programs.zsh.enable = true;
+
+  users.users.mili.shell = pkgs.zsh;
 
   environment.systemPackages = with pkgs; [
     kitty
@@ -43,8 +47,7 @@
     wl-clipboard
     grim
     slurp
-   ];
+  ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }
