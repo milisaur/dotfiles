@@ -54,6 +54,11 @@
     enable = true;
   };
 
+  services.murmur = {
+    enable = true;
+    openFirewall = true;
+  };
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
