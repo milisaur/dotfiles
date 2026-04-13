@@ -82,6 +82,7 @@
     discord
     tor-browser
     nextcloud-client
+    gimp
   ];
 
   system.stateVersion = "25.11";
