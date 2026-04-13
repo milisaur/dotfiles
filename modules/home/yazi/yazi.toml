@@ -51,8 +51,6 @@ archive = [
 
 [open]
 prepend_rules = [
-  { name = "*/", use = [ "open", "reveal" ] },
-
   { mime = "text/*", use = [ "edit", "open", "reveal" ] },
   { mime = "application/json", use = [ "edit", "open", "reveal" ] },
 
@@ -62,9 +60,9 @@ prepend_rules = [
   { mime = "video/*", use = [ "play", "open", "reveal" ] },
   { mime = "audio/*", use = [ "play", "open", "reveal" ] },
 
-  { name = "*.nix", use = [ "edit", "open", "reveal" ] },
-  { name = "*.md", use = [ "edit", "open", "reveal" ] },
-  { name = "*.html", use = [ "browser", "edit", "open" ] },
+  { url = "*.nix", use = [ "edit", "open", "reveal" ] },
+  { url = "*.md", use = [ "edit", "open", "reveal" ] },
+  { url = "*.html", use = [ "browser", "edit", "open" ] },
 
   { mime = "application/zip", use = [ "archive", "reveal" ] },
   { mime = "application/x-tar", use = [ "archive", "reveal" ] },

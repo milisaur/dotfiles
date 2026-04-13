@@ -1,6 +1,4 @@
-{ inputs, ... }:
-
-{
+{inputs, ...}: {
   imports = [
     inputs.nixvim.homeModules.nixvim
     ../../../modules/home/hyprland/uniraptor.nix
@@ -18,6 +16,7 @@
     ../../../modules/home/dev.nix
     ../../../modules/home/r.nix
     ../../../modules/home/nvim.nix
+    ../../../modules/home/yazi/yazi.nix
   ];
 
   home.username = "mili";
@@ -30,7 +29,4 @@
   };
 
   programs.home-manager.enable = true;
-
-
 }
-
