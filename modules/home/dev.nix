@@ -24,6 +24,16 @@
     wget
     unzip
 
+    file
+    jq
+    zoxide
+    ffmpeg
+    poppler
+    imagemagick
+    ueberzugpp
+    mpv
+    imv
+
     ripgrep
     fd
     fzf
