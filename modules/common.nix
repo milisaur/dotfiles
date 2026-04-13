@@ -2,7 +2,31 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  libreofficeFixed = pkgs.symlinkJoin {
+    name = "libreoffice-fixed";
+    paths = [pkgs.libreoffice];
+    buildInputs = [pkgs.makeWrapper];
+    postBuild = ''
+         wrapProgram $out/bin/libreoffice \
+        --set SAL_USE_VCLPLUGIN gen \
+        --set GDK_BACKEND x11
+
+      if [ -d "$out/share/applications" ]; then
+        for f in "$out"/share/applications/*.desktop; do
+          [ -e "$f" ] || continue
+          base="$(basename "$f")"
+          rm "$f"
+          cp "${pkgs.libreoffice}/share/applications/$base" "$f"
+
+          substituteInPlace "$f" \
+            --replace-warn 'Exec=libreoffice ' 'Exec=env SAL_USE_VCLPLUGIN=gen GDK_BACKEND=x11 libreoffice ' \
+            --replace-warn 'Exec=libreoffice%' 'Exec=env SAL_USE_VCLPLUGIN=gen GDK_BACKEND=x11 libreoffice%'
+        done
+      fi
+    '';
+  };
+in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -78,7 +102,7 @@
   environment.systemPackages = with pkgs; [
     bitwarden-desktop
     signal-desktop
-    libreoffice
+    libreofficeFixed
     discord
     tor-browser
     nextcloud-client
