@@ -9,34 +9,61 @@ It separates host-specific configuration from shared components while keeping th
 
 ---
 
+This setup is built around:
+
+- **NixOS + flakes**
+- **Home Manager**
+- **Modular configuration**
+- **Multi-host support**
+
+Each machine has its own configuration while sharing common modules where appropriate.
+
+---
+
 ## Structure
 ```text
 
-├── flake.nix
+├── assets
+│   └── wallpapers
+│       └── main.jpg
 ├── flake.lock
-├── hosts/
-│   ├── ankylosaurus/
-│   │     ├── configuration.nix
-│   │     └── hardware-configuration.nix
-│   ├── spinosaurus/
-│   │     └── ...
-├── home/
-│   └── mili/
-│       └── home.nix
-├── modules/
-│   └── home/
-│       ├── hyprland/
-│       ├── rofi/
-│       ├── dev.nix
-│       ├── gaming.nix
-│       ├── r.nix
-│       ├── nvim.nix
-│       ├── kitty.nix
-│       ├── waybar.nix
-│       ├── mako.nix
-│       ├── zsh.nix
-│       └── ...
-│   └── common.nix
+├── flake.nix
+├── hosts
+│   ├── ankylosaurus
+│   │   ├── home-manager/
+│   │   ├── hypr/
+│   │   ├── mako/
+│   │   ├── nixos/
+│   │   └── waybar/
+│   ├── spinosaurus
+│   │   ├── home-manager/
+│   │   └── nixos/
+│   └── uniraptor
+│       ├── home-manager/
+│       └── nixos/
+├── modules
+│   ├── common.nix
+│   └── home
+│       ├── dev.nix
+│       ├── fonts.nix
+│       ├── gaming.nix
+│       ├── gpg.nix
+│       ├── hyprland/
+│       ├── kitty.nix
+│       ├── mako.nix
+│       ├── nvim.nix
+│       ├── r.nix
+│       ├── rofi/
+│       ├── rofi.nix
+│       ├── waybar.nix
+│       ├── yazi/
+│       └── zsh.nix
+├── README.md
+└── scripts
+    ├── apply-system.sh
+    ├── apply-users.sh
+    ├── update-system.sh
+    └── update-user.sh
 ```
 
 ## Structure
@@ -44,16 +71,39 @@ It separates host-specific configuration from shared components while keeping th
 - **hosts/** – machine-specific NixOS configurations  
 - **home/** – Home Manager user configuration  
 - **modules/** – shared configuration (in progress)  
-- **flake.nix** – entry point for building systems  
+- **flake.nix** – entry point for building systems 
 
 ---
 
-## Hosts
+### Hosts
 
-| Host          | Description                                      |
-|---------------|--------------------------------------------------|
-| ankylosaurus  | gaming desktop                                   |
-| spinosaurus   | university/dev laptop (with some gaming features)|
+Each host defines:
+- hardware configuration
+- system-specific settings
+- imported shared modules
+
+### Modules
+
+Reusable configs for:
+- desktop environments
+- programs
+- services
+- shared system logic
+
+### Home
+
+User-level configuration managed via Home Manager.
+
+---
+
+## Machines
+
+| Host          | Purpose                          |
+|---------------|----------------------------------|
+| ankylosaurus  | Gaming desktop                   |
+| spinosaurus   | University / development laptop  |
+| uniraptor     | University / development desktop |
+
 
 ---
 
@@ -64,10 +114,24 @@ It separates host-specific configuration from shared components while keeping th
 - Multi-host setup  
 - Wayland environment (Hyprland)  
 - Waybar, Rofi, Kitty, Mako  
+- Delelopment + gaming environments
+
+---
+
+## Caveats
+
+- Not plug-and-play
+- Hardware-specific configs exist
+- Some modules are still experimental
 
 ---
 
 ## Installation
+
+Requirements:
+- NixOs with flakes enabled in ` configuration.nix ` [nix.settings.experimental-features = ["nix-command" "flakes"];]
+- Git
+- Internet connection
 
 Clone the repository:
 
@@ -77,6 +141,10 @@ cd ~/.dotfiles/
 ```
 
 Usage:
+
+- Change hostname in ` configuration.nix` + `flake.nix`
+- Adjust hardware config per machine
+- Modify modules in `modules/`
 
 Rebuild system:
 
