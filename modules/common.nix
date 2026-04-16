@@ -83,6 +83,8 @@
     tor-browser
     nextcloud-client
     gimp
+    v4l-utils
+    guvcview
   ];
 
   system.stateVersion = "25.11";
