@@ -1,12 +1,11 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   rPkgs = with pkgs.rPackages; [
     tidyverse
     languageserver
     data_table
     jsonlite
     devtools
+    psych
   ];
 
   myR = pkgs.rWrapper.override {
@@ -16,8 +15,7 @@ let
   myRStudio = pkgs.rstudioWrapper.override {
     packages = rPkgs;
   };
-in
-{
+in {
   home.packages = [
     myR
     myRStudio
