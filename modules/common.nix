@@ -69,6 +69,14 @@
 
   programs.firefox.enable = true;
 
+  xdg.mime.defaultApplications = {
+    "text/html" = "vivaldi";
+    "x-scheme-handler/http" = "vivaldi-stable.desktop";
+    "x-scheme-handler/https" = "vivaldi-stable.desktop";
+    "x-scheme-handler/about" = "org.vivaldi-stable.desktop";
+    "x-scheme-handler/unknown" = "org.vivaldi-stable.desktop";
+  };
+
   fonts.packages = with pkgs; [
     powerline-fonts
     nerd-fonts.meslo-lg
@@ -81,6 +89,7 @@
     libreoffice-qt
     discord
     tor-browser
+    vivaldi
     nextcloud-client
     gimp
     v4l-utils

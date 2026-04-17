@@ -63,6 +63,8 @@
 
         "$mod, E, exec, kitty -e yazi"
 
+        "$mod, V, exec, vivaldi"
+
         "$mod, T, exec, scratchpad-toggle"
 
         "$mod, M, exec, hyprlock"
