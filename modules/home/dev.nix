@@ -57,6 +57,8 @@
 
     playerctl
     brightnessctl
+
+    anki
   ];
 
   programs.direnv.enable = true;
