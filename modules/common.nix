@@ -90,6 +90,7 @@
     discord
     tor-browser
     vivaldi
+    vivaldi-ffmpeg-codecs
     nextcloud-client
     gimp
     v4l-utils
