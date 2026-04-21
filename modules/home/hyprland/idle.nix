@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     hypridle
   ];
@@ -13,18 +11,18 @@
     }
 
     listener {
-      timeout = 300
+      timeout = 600
       on-timeout = hyprlock
     }
 
     listener {
-      timeout = 600
+      timeout = 1200
       on-timeout = hyprctl dispatch dpms off
       on-resume = hyprctl dispatch dpms on
     }
 
     listener {
-      timeout = 900
+      timeout = 1800
       on-timeout = systemctl suspend
     }
   '';
