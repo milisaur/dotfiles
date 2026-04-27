@@ -95,6 +95,7 @@
     gimp
     v4l-utils
     guvcview
+    spotify
   ];
 
   system.stateVersion = "25.11";

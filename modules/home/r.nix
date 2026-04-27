@@ -6,6 +6,7 @@
     jsonlite
     devtools
     psych
+    renv
   ];
 
   myR = pkgs.rWrapper.override {
