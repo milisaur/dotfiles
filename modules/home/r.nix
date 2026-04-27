@@ -15,5 +15,8 @@ in {
   home.packages = [
     myR
     myRStudio
+
+    libuv
+    pkg-config
   ];
 }
