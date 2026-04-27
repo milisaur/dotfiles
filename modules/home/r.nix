@@ -1,11 +1,6 @@
 {pkgs, ...}: let
   rPkgs = with pkgs.rPackages; [
-    tidyverse
     languageserver
-    data_table
-    jsonlite
-    devtools
-    psych
     renv
   ];
 
