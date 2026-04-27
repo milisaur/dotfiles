@@ -12,7 +12,7 @@
     packages = rPkgs;
   };
 in {
-  home.packages = [
+  home.packages = with pkgs; [
     myR
     myRStudio
 
