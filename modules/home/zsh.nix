@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -13,7 +11,7 @@
       ga = "git add";
       gc = "git commit";
       gp = "git push";
-      rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles#spinosaurus";
+      nosleep = "systemd-inhibit --what=idle:sleep --why='manual override' sleep";
     };
 
     initContent = ''
