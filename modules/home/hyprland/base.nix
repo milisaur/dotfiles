@@ -70,6 +70,7 @@
         "$mod, M, exec, hyprlock"
 
         "$mod, F, fullscreen"
+        "$mod SHIFT, V, togglefloating"
 
         ",Print, exec, grim -g \"$(slurp)\" - | wl-copy"
         "SHIFT, Print, exec, sh -c 'mkdir -p ~/Pictures/Screenshots && grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'"
