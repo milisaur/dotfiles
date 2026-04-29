@@ -20,53 +20,55 @@
     };
 
     initContent = ''
-                  # ----- prompt -----
-            autoload -U colors && colors
-            autoload -Uz vcs_info
+            # ----- prompt -----
+      autoload -U colors && colors
+      autoload -Uz vcs_info
 
-            zstyle ':vcs_info:*' enable git
-            zstyle ':vcs_info:git:*' formats ' %F{green} %b%f'
-            zstyle ':vcs_info:git:*' actionformats ' %F{yellow} %b|%a%f'
+      zstyle ':vcs_info:*' enable git
+      zstyle ':vcs_info:git:*' formats ' %F{#a6e3a1} %b%f'
+      zstyle ':vcs_info:git:*' actionformats ' %F{#f9e2af} %b|%a%f'
 
-            precmd() {
-              vcs_info
-            }
+      precmd() {
+        vcs_info
+      }
 
-            setopt PROMPT_SUBST
+      setopt PROMPT_SUBST
 
-           PROMPT='%F{green}%n@%m%f %F{cyan}%~%f''${vcs_info_msg_0_}
-      %F{green}❯%f '
-                  setopt AUTO_CD
-                  setopt AUTO_PUSHD
-                  setopt PUSHD_IGNORE_DUPS
-                  setopt PUSHD_SILENT
+      PROMPT='%F{#a6e3a1}%n@%m%f %F{#89b4fa}%~%f''${vcs_info_msg_0_}
+      %F{#6c7086}❯%f '
 
-                  setopt HIST_IGNORE_DUPS
-                  setopt HIST_IGNORE_ALL_DUPS
-                  setopt HIST_FIND_NO_DUPS
-                  setopt HIST_REDUCE_BLANKS
-                  setopt SHARE_HISTORY
 
-                  setopt INTERACTIVE_COMMENTS
-                  setopt NO_BEEP
+            setopt AUTO_CD
+            setopt AUTO_PUSHD
+            setopt PUSHD_IGNORE_DUPS
+            setopt PUSHD_SILENT
 
-                  zstyle ':completion:*' menu select
-                  zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-                  zstyle ':completion:*' verbose yes
-                  zstyle ':completion:*:descriptions' format '%F{244}-- %d --%f'
-                  zstyle ':completion:*:messages' format '%F{244}-- %d --%f'
-                  zstyle ':completion:*:warnings' format '%F{244}No matches found%f'
-                  zstyle ':completion:*' group-name ""
+            setopt HIST_IGNORE_DUPS
+            setopt HIST_IGNORE_ALL_DUPS
+            setopt HIST_FIND_NO_DUPS
+            setopt HIST_REDUCE_BLANKS
+            setopt SHARE_HISTORY
 
-                  bindkey -e
-                  bindkey '^[[1;5C' forward-word
-                  bindkey '^[[1;5D' backward-word
-                  bindkey '^H' backward-kill-word
-                  bindkey '^[[3~' delete-char
+            setopt INTERACTIVE_COMMENTS
+            setopt NO_BEEP
 
-                  if command -v fzf >/dev/null 2>&1; then
-                    source <(${pkgs.fzf}/bin/fzf --zsh)
-                  fi
+            zstyle ':completion:*' menu select
+            zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+            zstyle ':completion:*' verbose yes
+            zstyle ':completion:*:descriptions' format '%F{244}-- %d --%f'
+            zstyle ':completion:*:messages' format '%F{244}-- %d --%f'
+            zstyle ':completion:*:warnings' format '%F{244}No matches found%f'
+            zstyle ':completion:*' group-name ""
+
+            bindkey -e
+            bindkey '^[[1;5C' forward-word
+            bindkey '^[[1;5D' backward-word
+            bindkey '^H' backward-kill-word
+            bindkey '^[[3~' delete-char
+
+            if command -v fzf >/dev/null 2>&1; then
+              source <(${pkgs.fzf}/bin/fzf --zsh)
+            fi
     '';
   };
 
