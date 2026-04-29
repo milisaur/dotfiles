@@ -1,10 +1,23 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
 
     globals.mapleader = " ";
+
+    colorschemes.catppuccin = {
+      enable = true;
+      settings = {
+        flavour = "frappe";
+        transparent_background = true;
+        integrations = {
+          treesitter = true;
+          gitsigns = true;
+          cmp = true;
+          telescope.enabled = true;
+          native_lsp.enabled = true;
+        };
+      };
+    };
 
     opts = {
       number = true;
@@ -17,18 +30,33 @@
       ignorecase = true;
       smartcase = true;
       termguicolors = true;
+      cursorline = true;
       updatetime = 250;
       signcolumn = "yes";
     };
 
     clipboard.register = "unnamedplus";
 
+    diagnostic.settings = {
+      virtual_text = true;
+      signs = true;
+      underline = true;
+      update_in_insert = false;
+    };
+
     plugins = {
       lualine.enable = true;
       web-devicons.enable = true;
       telescope.enable = true;
-      treesitter.enable = true;
-      treesitter.settings.highlight.enable = true;
+
+      treesitter = {
+        enable = true;
+        settings = {
+          highlight.enable = true;
+          indent.enable = true;
+        };
+      };
+
       gitsigns.enable = true;
 
       lsp = {
@@ -37,38 +65,38 @@
           gopls.enable = true;
           pyright.enable = true;
           r_language_server = {
-	    enable = true;
-	    package = null;
+            enable = true;
+            package = null;
           };
         };
       };
 
-    cmp = {
-     enable = true;
-      autoEnableSources = true;
-      autoLoad = true;
+      cmp = {
+        enable = true;
+        autoEnableSources = true;
+        autoLoad = true;
 
-      settings = {
-        completion = {
-        completeopt = "menu,menuone,noinsert";
-       };
+        settings = {
+          completion = {
+            completeopt = "menu,menuone,noinsert";
+          };
 
-        mapping = {
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-         "<Tab>" = "cmp.mapping.select_next_item()";
-         "<S-Tab>" = "cmp.mapping.select_prev_item()";
-       };
+          mapping = {
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
+            "<Tab>" = "cmp.mapping.select_next_item()";
+            "<S-Tab>" = "cmp.mapping.select_prev_item()";
+          };
 
-       sources = [
-          { name = "nvim_lsp"; }
-         { name = "path"; }
-         { name = "buffer"; }
-        ];
+          sources = [
+            {name = "nvim_lsp";}
+            {name = "path";}
+            {name = "buffer";}
+          ];
+        };
       };
-    };
 
-    cmp-nvim-lsp.enable = true;
+      cmp-nvim-lsp.enable = true;
       cmp-buffer.enable = true;
       cmp-path.enable = true;
 
@@ -76,10 +104,10 @@
         enable = true;
         settings = {
           formatters_by_ft = {
-            go = [ "gofmt" ];
-            python = [ "black" ];
-            r = [ "styler" ];
-            nix = [ "alejandra" ];
+            go = ["gofmt"];
+            python = ["black"];
+            r = ["styler"];
+            nix = ["alejandra"];
           };
         };
       };
@@ -87,6 +115,7 @@
 
     extraPackages = with pkgs; [
       black
+      alejandra
       rPackages.styler
     ];
 
@@ -141,19 +170,19 @@
         key = "<leader>e";
         action = "<cmd>lua vim.diagnostic.open_float()<CR>";
       }
-      ];
+    ];
 
     autoCmd = [
       {
-        event = [ "BufWritePre" ];
+        event = ["BufWritePre"];
         callback = {
-         __raw = ''
+          __raw = ''
             function()
-             require("conform").format({ async = false })
-           end
+              require("conform").format({ async = false })
+            end
           '';
         };
-     }
-  ];
+      }
+    ];
   };
 }
