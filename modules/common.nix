@@ -25,6 +25,9 @@
   };
   services.desktopManager.plasma6.enable = true;
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
   services.xserver.xkb = {
     layout = "de";
     variant = "";
@@ -96,6 +99,10 @@
     v4l-utils
     guvcview
     spotify
+    exfatprogs
+    ntfs3g
+    udiskie
+    cryptsetup
   ];
 
   system.stateVersion = "25.11";
