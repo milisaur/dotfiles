@@ -22,6 +22,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;

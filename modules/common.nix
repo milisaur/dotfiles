@@ -54,6 +54,8 @@
   hardware.sane.extraBackends = with pkgs; [epkowa];
   services.ipp-usb.enable = true;
 
+  hardware.graphics.enable = true;
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -61,12 +63,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   };
 
   users.users.mili = {
     isNormalUser = true;
     description = "mili";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "video"];
     packages = with pkgs; [kdePackages.kate];
   };
 
@@ -90,7 +93,7 @@
     bitwarden-desktop
     signal-desktop
     libreoffice-qt
-    discord
+    vesktop
     tor-browser
     vivaldi
     vivaldi-ffmpeg-codecs
