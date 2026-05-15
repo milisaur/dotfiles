@@ -1,7 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     inkscape
-    digiKam
+    gimp
+    digikam
     darktable
     rawtherapee
   ];

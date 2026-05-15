@@ -98,7 +98,6 @@
     vivaldi
     vivaldi-ffmpeg-codecs
     nextcloud-client
-    gimp
     v4l-utils
     guvcview
     spotify

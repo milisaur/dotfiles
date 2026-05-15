@@ -18,6 +18,7 @@
     ../../../modules/home/mako.nix
     ../../../modules/home/gaming.nix
     ../../../modules/home/yazi/yazi.nix
+    ../../../modules/home/editing.nix
   ];
 
   home.username = "mili";
