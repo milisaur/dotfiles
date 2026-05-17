@@ -83,14 +83,12 @@
     slurp
 
     bitwarden-desktop
-    discord-ptb
     git
     gparted
     home-manager
     hyprpaper
     hyprshot
     kitty
-    libreoffice
     libnotify
     lxqt.lxqt-policykit
     lutris
@@ -101,13 +99,9 @@
     protonup-qt
     simple-scan
     spotify
-    texliveSmall
-    texstudio
     tor-browser
     vulkan-tools
-    vscode
     waybar
     wine
-    zsh-powerlevel10k
   ];
 }
