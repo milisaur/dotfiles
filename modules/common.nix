@@ -89,6 +89,10 @@
     font-awesome
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-38.8.4"
+  ];
+
   environment.systemPackages = with pkgs; [
     bitwarden-desktop
     signal-desktop
