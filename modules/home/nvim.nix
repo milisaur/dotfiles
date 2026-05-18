@@ -54,8 +54,20 @@
         settings = {
           highlight.enable = true;
           indent.enable = true;
+
+          ensure_installed = [
+            "markdown"
+            "markdown_inline"
+            "r"
+            "python"
+            "yaml"
+            "bash"
+            "go"
+          ];
         };
       };
+      quarto.enable = true;
+      otter.enable = true;
 
       gitsigns.enable = true;
 
@@ -67,6 +79,11 @@
           r_language_server = {
             enable = true;
             package = null;
+            extraOptions = {
+              settings = {
+                r.lsp.diagnostics = false;
+              };
+            };
           };
         };
       };

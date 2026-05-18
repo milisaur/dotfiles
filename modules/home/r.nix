@@ -6,6 +6,7 @@
   rPkgs = with pkgs.rPackages; [
     languageserver
     renv
+    lintr
   ];
 
   myR = pkgs.rWrapper.override {
