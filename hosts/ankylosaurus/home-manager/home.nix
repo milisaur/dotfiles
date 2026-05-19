@@ -17,6 +17,7 @@
     ../../../modules/home/hyprland/idle.nix
     ../../../modules/home/mako.nix
     ../../../modules/home/gaming.nix
+    ../../../modules/home/editing.nix
     ../../../modules/home/yazi/yazi.nix
   ];
 
