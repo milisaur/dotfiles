@@ -108,6 +108,7 @@
     exfatprogs
     ntfs3g
     udiskie
+    pavucontrol
     cryptsetup
   ];
 
