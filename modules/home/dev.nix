@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  mars-mips,
+  ...
+}: {
   home.packages = with pkgs; [
     kitty
     git
@@ -50,6 +54,9 @@
 
     python3
     pyright
+
+    jdk21
+    mars-mips
 
     direnv
     nix-direnv
