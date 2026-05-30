@@ -2,6 +2,7 @@
   pkgs,
   mars-mips,
   asm-simulator,
+  hades,
   ...
 }: {
   home.packages = with pkgs; [
@@ -58,6 +59,7 @@
 
     jdk21
     asm-simulator
+    hades
     mars-mips
 
     direnv

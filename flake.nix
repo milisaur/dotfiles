@@ -33,12 +33,16 @@
       jdk21 = pkgs.jdk21;
     };
 
+    hades = pkgs.callPackage ./pkgs/hades.nix {
+      jdk8 = pkgs.jdk8;
+    };
+
     mkHost = hostName:
       nixpkgs.lib.nixosSystem {
         inherit system;
 
         specialArgs = {
-          inherit inputs hostName mars-mips asm-simulator;
+          inherit inputs hostName mars-mips asm-simulator hades;
         };
 
         modules = [
@@ -51,7 +55,7 @@
             home-manager.useUserPackages = true;
 
             home-manager.extraSpecialArgs = {
-              inherit inputs hostName mars-mips asm-simulator;
+              inherit inputs hostName mars-mips asm-simulator hades;
             };
 
             home-manager.users.mili =
