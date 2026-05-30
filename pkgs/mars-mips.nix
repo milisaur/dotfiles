@@ -3,7 +3,7 @@
   stdenvNoCC,
   fetchurl,
   makeWrapper,
-  jre,
+  jdk8,
 }:
 stdenvNoCC.mkDerivation {
   pname = "mars-mips";
@@ -23,8 +23,9 @@ stdenvNoCC.mkDerivation {
       cp $src $out/share/mars/Mars.jar
 
       mkdir -p $out/bin
-      makeWrapper ${jre}/bin/java $out/bin/mars \
-        --add-flags "-jar $out/share/mars/Mars.jar"
+     makeWrapper ${jdk8}/bin/java $out/bin/mars \
+      --set _JAVA_AWT_WM_NONREPARENTING 1 \
+      --add-flags "-jar $out/share/mars/Mars.jar"
 
       mkdir -p $out/share/applications
 

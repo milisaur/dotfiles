@@ -26,7 +26,7 @@
     };
 
     mars-mips = pkgs.callPackage ./pkgs/mars-mips.nix {
-      jre = pkgs.jdk21;
+      jdk8 = pkgs.jdk8;
     };
 
     asm-simulator = pkgs.callPackage ./pkgs/asm-simulator.nix {

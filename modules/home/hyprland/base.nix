@@ -32,6 +32,11 @@
         "float,class:^(pavucontrol)$"
         "float,class:^(nm-connection-editor)$"
 
+        # Java/Swing Apps: MARS, ASM Simulator, HADES
+        "float,class:^(Mars)$"
+        "center,class:^(Mars)$"
+        "size 1400 900,class:^(Mars)$"
+
         "workspace special:scratchpad silent,class:^(scratchpad)$"
         "float,class:^(scratchpad)$"
         "size 1200 700,class:^(scratchpad)$"
