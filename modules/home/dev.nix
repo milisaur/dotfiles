@@ -1,6 +1,7 @@
 {
   pkgs,
   mars-mips,
+  asm-simulator,
   ...
 }: {
   home.packages = with pkgs; [
@@ -56,6 +57,7 @@
     pyright
 
     jdk21
+    asm-simulator
     mars-mips
 
     direnv

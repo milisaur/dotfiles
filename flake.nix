@@ -29,12 +29,16 @@
       jre = pkgs.jdk21;
     };
 
+    asm-simulator = pkgs.callPackage ./pkgs/asm-simulator.nix {
+      jdk21 = pkgs.jdk21;
+    };
+
     mkHost = hostName:
       nixpkgs.lib.nixosSystem {
         inherit system;
 
         specialArgs = {
-          inherit inputs hostName mars-mips;
+          inherit inputs hostName mars-mips asm-simulator;
         };
 
         modules = [
@@ -47,7 +51,7 @@
             home-manager.useUserPackages = true;
 
             home-manager.extraSpecialArgs = {
-              inherit inputs hostName mars-mips;
+              inherit inputs hostName mars-mips asm-simulator;
             };
 
             home-manager.users.mili =
