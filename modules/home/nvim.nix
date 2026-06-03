@@ -45,6 +45,27 @@
     };
 
     plugins = {
+      toggleterm = {
+        enable = true;
+        settings = {
+          size = 20; # Höhe des Terminals
+          direction = "vertical"; # Split nach rechts/unten
+          open_mapping = {
+            __raw = "'<c-t>'";
+          };
+          hide_numbers = true;
+          shade_filetypes = {};
+          shade_terminals = true;
+          shading_factor = 2;
+          start_in_insert = true;
+          insert_mappings = true;
+          persist_size = true;
+          persist_mode = true;
+          close_on_exit = true;
+          shell = "${pkgs.zsh}/bin/zsh"; # Nutzt deine ZSH
+        };
+      };
+
       lualine.enable = true;
       web-devicons.enable = true;
       telescope.enable = true;
@@ -74,7 +95,22 @@
       lsp = {
         enable = true;
         servers = {
-          gopls.enable = true;
+          gopls = {
+            enable = true;
+            settings = {
+              gopls = {
+                hints = {
+                  assignVariableTypes = true;
+                  compositeLiteralFields = true;
+                  constantValues = true;
+                  functionTypeParameters = true;
+                  parameterNames = true;
+                  rangeVariableTypes = true;
+                };
+              };
+            };
+          };
+
           pyright.enable = true;
           r_language_server = {
             enable = true;
@@ -87,7 +123,6 @@
           };
         };
       };
-
       cmp = {
         enable = true;
         autoEnableSources = true;
@@ -99,12 +134,19 @@
           };
 
           mapping = {
-            "<C-Space>" = "cmp.mapping.complete()";
-            "<CR>" = "cmp.mapping.confirm({ select = true })";
-            "<Tab>" = "cmp.mapping.select_next_item()";
-            "<S-Tab>" = "cmp.mapping.select_prev_item()";
+            "<C-Space>" = {
+              __raw = "cmp.mapping.complete()";
+            };
+            "<CR>" = {
+              __raw = "cmp.mapping.confirm({ select = true })";
+            };
+            "<Tab>" = {
+              __raw = "cmp.mapping.select_next_item()";
+            };
+            "<S-Tab>" = {
+              __raw = "cmp.mapping.select_prev_item()";
+            };
           };
-
           sources = [
             {name = "nvim_lsp";}
             {name = "path";}
@@ -129,6 +171,17 @@
         };
       };
     };
+
+    extraConfigLua = ''
+       -- Öffnet Terminal im rechten Split und wechselt sofort hinein
+       vim.api.nvim_set_keymap('n', '<leader>t', ':vsplit | terminal<CR>', { noremap = true, silent = true })
+
+      -- Fenster-Navigation mit Ctrl + hjkl
+       vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Fenster nach links' })
+       vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Fenster nach unten' })
+       vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Fenster nach oben' })
+       vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Fenster nach rechts' })
+    '';
 
     extraPackages = with pkgs; [
       black

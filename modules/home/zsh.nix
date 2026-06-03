@@ -20,7 +20,7 @@
     };
 
     initContent = ''
-            # ----- prompt -----
+      # ----- Prompt -----
       autoload -U colors && colors
       autoload -Uz vcs_info
 
@@ -33,42 +33,58 @@
       }
 
       setopt PROMPT_SUBST
-
       PROMPT='%F{#a6e3a1}%n@%m%f %F{#89b4fa}%~%f''${vcs_info_msg_0_}
       %F{#6c7086}❯%f '
 
+      # ----- Core Options -----
+      setopt AUTO_CD
+      setopt AUTO_PUSHD
+      setopt PUSHD_IGNORE_DUPS
+      setopt PUSHD_SILENT
+      setopt HIST_IGNORE_DUPS
+      setopt HIST_IGNORE_ALL_DUPS
+      setopt HIST_FIND_NO_DUPS
+      setopt HIST_REDUCE_BLANKS
+      setopt SHARE_HISTORY
+      setopt INTERACTIVE_COMMENTS
+      setopt NO_BEEP
 
-            setopt AUTO_CD
-            setopt AUTO_PUSHD
-            setopt PUSHD_IGNORE_DUPS
-            setopt PUSHD_SILENT
+      # ----- Completion -----
+      zstyle ':completion:*' menu select
+      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+      zstyle ':completion:*' verbose yes
+      zstyle ':completion:*:descriptions' format '%F{244}-- %d --%f'
+      zstyle ':completion:*:messages' format '%F{244}-- %d --%f'
+      zstyle ':completion:*:warnings' format '%F{244}No matches found%f'
+      zstyle ':completion:*' group-name ""
 
-            setopt HIST_IGNORE_DUPS
-            setopt HIST_IGNORE_ALL_DUPS
-            setopt HIST_FIND_NO_DUPS
-            setopt HIST_REDUCE_BLANKS
-            setopt SHARE_HISTORY
+      # ----- Keybindings (Standard Emacs) -----
+      bindkey -e
 
-            setopt INTERACTIVE_COMMENTS
-            setopt NO_BEEP
+      # Bessere Wort-Navigation
+      bindkey '^[[1;5C' forward-word
+      bindkey '^[[1;5D' backward-word
+      bindkey '^H' backward-kill-word
+      bindkey '^[[3~' delete-char
 
-            zstyle ':completion:*' menu select
-            zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-            zstyle ':completion:*' verbose yes
-            zstyle ':completion:*:descriptions' format '%F{244}-- %d --%f'
-            zstyle ':completion:*:messages' format '%F{244}-- %d --%f'
-            zstyle ':completion:*:warnings' format '%F{244}No matches found%f'
-            zstyle ':completion:*' group-name ""
+      # ----- FZF Integration (WICHTIG!) -----
+      if command -v fzf >/dev/null 2>&1; then
+        source <(${pkgs.fzf}/bin/fzf --zsh)
 
-            bindkey -e
-            bindkey '^[[1;5C' forward-word
-            bindkey '^[[1;5D' backward-word
-            bindkey '^H' backward-kill-word
-            bindkey '^[[3~' delete-char
+        # History Suche mit Ctrl + R (ersetzt die Standard-History-Suche)
+        # Dies ist oft der wichtigste Shortcut!
+        bindkey '^R' fzf-history-search
 
-            if command -v fzf >/dev/null 2>&1; then
-              source <(${pkgs.fzf}/bin/fzf --zsh)
-            fi
+        # Datei-Suche mit Ctrl + T (fügt Dateipfade ein)
+        bindkey '^T' fzf-file-widget
+
+        # Prozess-Suche mit Ctrl + X (sucht laufende Prozesse)
+        bindkey '^X' fzf-cd-widget
+
+        # Autosuggestion Annahme mit Ctrl + E (oder Right Arrow)
+        # Wenn autosuggestion enabled ist, akzeptiert Ctrl+E den Vorschlag
+        bindkey '^E' accept-autosuggestion
+      fi
     '';
   };
 
