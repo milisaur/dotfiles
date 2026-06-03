@@ -53,6 +53,7 @@
     go
     gopls
     gotools
+    golangci-lint
 
     python3
     pyright
