@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   programs.zsh = {
     enable = true;
 
@@ -67,13 +71,12 @@
       bindkey '^H' backward-kill-word
       bindkey '^[[3~' delete-char
 
-      # ----- FZF Integration (WICHTIG!) -----
+      # ----- FZF Integration -----
       if command -v fzf >/dev/null 2>&1; then
         source <(${pkgs.fzf}/bin/fzf --zsh)
 
         # History Suche mit Ctrl + R (ersetzt die Standard-History-Suche)
-        # Dies ist oft der wichtigste Shortcut!
-        bindkey '^R' fzf-history-search
+        bindkey '^R' fzf-history-widget
 
         # Datei-Suche mit Ctrl + T (fügt Dateipfade ein)
         bindkey '^T' fzf-file-widget
@@ -82,8 +85,7 @@
         bindkey '^X' fzf-cd-widget
 
         # Autosuggestion Annahme mit Ctrl + E (oder Right Arrow)
-        # Wenn autosuggestion enabled ist, akzeptiert Ctrl+E den Vorschlag
-        bindkey '^E' accept-autosuggestion
+        bindkey '^E' autosuggest-accept
       fi
     '';
   };
