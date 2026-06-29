@@ -8,7 +8,7 @@
 
   networking.networkmanager.enable = true;
 
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "America/Chicago";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -69,9 +69,12 @@
   users.users.mili = {
     isNormalUser = true;
     description = "mili";
-    extraGroups = ["networkmanager" "wheel" "video"];
+    extraGroups = ["networkmanager" "wheel" "video" "libvirtd" "kvm"];
     packages = with pkgs; [kdePackages.kate];
   };
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   programs.firefox.enable = true;
 

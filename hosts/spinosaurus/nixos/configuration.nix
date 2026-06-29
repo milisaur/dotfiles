@@ -5,7 +5,10 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../../modules/common.nix
+    ../../../modules/system/common.nix
+    ../../../modules/system/power.nix
+    ../../../modules/system/nvidia-prime.nix
+    ../../../modules/system/laptop.nix
   ];
 
   networking.hostName = "spinosaurus";

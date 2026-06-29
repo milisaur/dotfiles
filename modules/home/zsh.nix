@@ -21,6 +21,10 @@
 
     shellAliases = {
       nosleep = "systemd-inhibit --what=idle:sleep --why='manual override' sleep";
+      battery = "upower -i $(upower -e | grep BAT)";
+      gpu = "cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status";
+      gpuwake = "cat /sys/bus/pci/devices/0000:01:00.0/power_state";
+      watts = "upower -i $(upower -e | grep BAT) | grep energy-rate";
     };
 
     initContent = ''

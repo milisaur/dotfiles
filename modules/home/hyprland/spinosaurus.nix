@@ -1,7 +1,9 @@
-{ ... }:
-
-{
+{...}: {
   wayland.windowManager.hyprland.settings = {
+    env = [
+      "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
+      "WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
+    ];
     monitor = [
       ",preferred,auto,1"
     ];
@@ -12,7 +14,7 @@
       touchpad = {
         natural_scroll = false;
       };
-  };
+    };
 
     bindel = [
       ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"

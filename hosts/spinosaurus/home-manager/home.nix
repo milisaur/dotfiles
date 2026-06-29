@@ -20,6 +20,8 @@
     ../../../modules/home/yazi/yazi.nix
     ../../../modules/home/editing.nix
     ../../../modules/home/quarto.nix
+    ../../../modules/home/debug.nix
+    ../../../modules/home/laptop-hyprland-power.nix
   ];
 
   home.username = "mili";
