@@ -18,6 +18,7 @@
     ../../../modules/home/nvim.nix
     ../../../modules/home/yazi/yazi.nix
     ../../../modules/home/quarto.nix
+    ../../../modules/home/android.nix
   ];
 
   home.username = "mili";

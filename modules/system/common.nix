@@ -8,7 +8,7 @@
 
   networking.networkmanager.enable = true;
 
-  time.timeZone = "America/Chicago";
+  time.timeZone = "Europe/Berlin";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -93,6 +93,7 @@
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
+    "electron-39.8.10"
     "electron-38.8.4"
   ];
 
@@ -113,6 +114,7 @@
     udiskie
     pavucontrol
     cryptsetup
+    joplin-desktop
   ];
 
   system.stateVersion = "25.11";

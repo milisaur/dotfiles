@@ -5,7 +5,8 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../../modules/common.nix
+    ../../../modules/system/common.nix
+    ../../../modules/system/android.nix
   ];
 
   networking.hostName = "uniraptor"; # Define your hostname.

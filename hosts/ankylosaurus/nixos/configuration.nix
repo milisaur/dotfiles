@@ -9,7 +9,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../../modules/common.nix
+    ../../../modules/system/common.nix
   ];
 
   networking.hostName = "ankylosaurus";
