@@ -14,6 +14,10 @@
 
     settings = {
       "$mod" = "SUPER";
+      device = {
+        name = "ugreen-receiver--mouse";
+        natural_scroll = true;
+      };
 
       exec-once = [
         "waybar"
