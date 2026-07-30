@@ -22,6 +22,7 @@
     ../../../modules/home/quarto.nix
     ../../../modules/home/debug.nix
     ../../../modules/home/laptop-hyprland-power.nix
+    ../../../modules/home/dark.nix
   ];
 
   home.username = "mili";

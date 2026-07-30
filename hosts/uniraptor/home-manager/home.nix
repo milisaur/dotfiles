@@ -19,6 +19,7 @@
     ../../../modules/home/yazi/yazi.nix
     ../../../modules/home/quarto.nix
     ../../../modules/home/android.nix
+    ../../../modules/home/dark.nix
   ];
 
   home.username = "mili";

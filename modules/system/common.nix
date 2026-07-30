@@ -50,8 +50,8 @@
     openFirewall = true;
   };
 
-  hardware.sane.enable = true;
-  hardware.sane.extraBackends = with pkgs; [epkowa];
+  #hardware.sane.enable = true;
+  #hardware.sane.extraBackends = with pkgs; [epkowa];
   services.ipp-usb.enable = true;
 
   hardware.graphics.enable = true;
