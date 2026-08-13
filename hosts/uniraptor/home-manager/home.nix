@@ -20,6 +20,7 @@
     ../../../modules/home/quarto.nix
     ../../../modules/home/android.nix
     ../../../modules/home/dark.nix
+    ../../../modules/home/obs.nix
   ];
 
   home.username = "mili";

@@ -20,6 +20,7 @@
     ../../../modules/home/editing.nix
     ../../../modules/home/yazi/yazi.nix
     ../../../modules/home/yazi/dark.nix
+    ../../../modules/home/yazi/obs.nix
   ];
 
   home.username = "mili";
