@@ -56,6 +56,18 @@
 
   hardware.graphics.enable = true;
 
+  hardware.ckb-next = {
+    enable = true;
+
+    package = pkgs.ckb-next.overrideAttrs (old: {
+      cmakeFlags =
+        (old.cmakeFlags or [])
+        ++ [
+          "-DUSE_DBUS_MENU=0"
+        ];
+    });
+  };
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -115,6 +127,7 @@
     pavucontrol
     cryptsetup
     joplin-desktop
+    wtype
   ];
 
   system.stateVersion = "25.11";

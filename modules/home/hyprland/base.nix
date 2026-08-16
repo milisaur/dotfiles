@@ -73,6 +73,7 @@
         "$mod, E, exec, kitty -e yazi"
 
         "$mod, V, exec, vivaldi"
+        "$mod, D, exec, dolphin"
 
         "$mod, T, exec, scratchpad-toggle"
 
@@ -124,6 +125,14 @@
 
         "$mod, S, togglespecialworkspace, magic"
         "$mod SHIFT, S, movetoworkspace, special:magic"
+
+        # Corsair K55 G1–G6
+        ", code:191, exec, wtype '['"
+        ", code:192, exec, wtype ']'"
+        ", code:193, exec, wtype '{'"
+        ", code:194, exec, wtype '}'"
+        ", code:195, exec, wtype '\\'"
+        ", code:196, exec, wtype '|'"
       ];
 
       bindm = [
