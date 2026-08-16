@@ -26,6 +26,7 @@
         "hyprpaper"
         "hypridle"
         "gnome-keyring-daemon --start --components=secrets"
+        "ckb-next -b"
       ];
 
       misc = {
