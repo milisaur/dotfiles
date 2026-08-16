@@ -7,6 +7,7 @@
     ../../../modules/home/hyprland/wallpaper.nix
     ../../../modules/home/hyprland/lock.nix
     ../../../modules/home/hyprland/idle.nix
+    ../../../modules/home/hyprland/hyprsunset.nix
     ../../../modules/home/zsh.nix
     ../../../modules/home/kitty.nix
     ../../../modules/home/fonts.nix

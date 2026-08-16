@@ -79,6 +79,9 @@
 
         "$mod, M, exec, hyprlock"
 
+        "$mod, N, exec, hyprctl hyprsunset identity"
+        "$mod SHIFT, N, exec, systemctl --user restart hyprsunset.service"
+
         "$mod, F, fullscreen"
         "$mod SHIFT, V, togglefloating"
 
