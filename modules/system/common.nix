@@ -128,6 +128,7 @@
     cryptsetup
     joplin-desktop
     wtype
+    gnome-clocks
   ];
 
   system.stateVersion = "25.11";
