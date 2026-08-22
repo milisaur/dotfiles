@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   gtk = {
     enable = true;
     colorScheme = "dark";
@@ -13,6 +17,8 @@
       package = pkgs.papirus-icon-theme;
     };
   };
+
+  gtk.gtk4.theme = config.gtk.theme;
 
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";

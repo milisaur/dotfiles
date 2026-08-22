@@ -1,6 +1,12 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.nixvim = {
     enable = true;
+
+    nixpkgs.source = inputs.nixvim.inputs.nixpkgs;
 
     globals.mapleader = " ";
 
