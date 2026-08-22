@@ -18,8 +18,8 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
         user = "greeter";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd start-hyprland";
       };
     };
   };
@@ -109,6 +109,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    adwaita-icon-theme
     signal-desktop
     libreoffice-qt
     vesktop

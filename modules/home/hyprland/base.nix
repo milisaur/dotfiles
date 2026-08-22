@@ -18,6 +18,10 @@
         name = "ugreen-receiver--mouse";
         natural_scroll = true;
       };
+      env = [
+        "XCURSOR_THEME,Adwaita"
+        "XCURSOR_SIZE,24"
+      ];
 
       exec-once = [
         "waybar"
@@ -33,19 +37,13 @@
         disable_hyprland_logo = true;
       };
 
-      windowrulev2 = [
-        "float,class:^(pavucontrol)$"
-        "float,class:^(nm-connection-editor)$"
+      windowrule = [
+        "match:class ^(pavucontrol)$, float true"
+        "match:class ^(nm-connection-editor)$, float true"
 
-        # Java/Swing Apps: MARS, ASM Simulator, HADES
-        "float,class:^(Mars)$"
-        "center,class:^(Mars)$"
-        "size 1400 900,class:^(Mars)$"
+        "match:class ^(Mars)$, float true, center true, size 1400 900"
 
-        "workspace special:scratchpad silent,class:^(scratchpad)$"
-        "float,class:^(scratchpad)$"
-        "size 1200 700,class:^(scratchpad)$"
-        "center,class:^(scratchpad)$"
+        "match:class ^(scratchpad)$, workspace special:scratchpad silent, float true, size 1200 700, center true"
       ];
 
       general = {
@@ -60,7 +58,6 @@
       };
 
       dwindle = {
-        pseudotile = true;
         preserve_split = true;
       };
 

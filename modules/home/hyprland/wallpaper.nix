@@ -1,17 +1,17 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   wallpaper = ../../../assets/wallpapers/main.jpg;
-in
-
-{
+in {
   home.packages = with pkgs; [
     hyprpaper
   ];
 
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload = ${wallpaper}
-    wallpaper = ,${wallpaper}
+    wallpaper {
+      monitor =
+      path = ${wallpaper}
+      fit_mode = cover
+    }
+
     splash = false
   '';
 }
