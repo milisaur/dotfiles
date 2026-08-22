@@ -13,17 +13,16 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = false;
   services.greetd = {
-    enable = false;
+    enable = true;
     settings = {
       default_session = {
-        command = "Hyprland";
-        user = "mili";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
+        user = "greeter";
       };
     };
   };
-  services.desktopManager.plasma6.enable = true;
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
@@ -110,7 +109,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    bitwarden-desktop
     signal-desktop
     libreoffice-qt
     vesktop

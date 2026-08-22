@@ -3,8 +3,6 @@
     android-tools
   ];
 
-  programs.adb.enable = true;
-
   users.users.mili.extraGroups = [
     "adbusers"
     "kvm"
