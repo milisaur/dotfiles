@@ -19,8 +19,8 @@
     ../../../modules/home/gaming.nix
     ../../../modules/home/editing.nix
     ../../../modules/home/yazi/yazi.nix
-    ../../../modules/home/yazi/dark.nix
-    ../../../modules/home/yazi/obs.nix
+    ../../../modules/home/dark.nix
+    ../../../modules/home/obs.nix
   ];
 
   home.username = "mili";
