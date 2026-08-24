@@ -37,7 +37,6 @@
     poppler
     imagemagick
     ueberzugpp
-    mpv
     imv
 
     ripgrep

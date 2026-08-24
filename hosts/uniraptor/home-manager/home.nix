@@ -22,6 +22,7 @@
     ../../../modules/home/android.nix
     ../../../modules/home/dark.nix
     ../../../modules/home/obs.nix
+    ../../../modules/home/mpv.nix
   ];
 
   home.username = "mili";

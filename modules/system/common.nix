@@ -128,6 +128,7 @@
     joplin-desktop
     wtype
     gnome-clocks
+    vlc
   ];
 
   system.stateVersion = "25.11";
