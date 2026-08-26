@@ -25,11 +25,15 @@ open = [
 ]
 
 reveal = [
-  { run = 'xdg-open "$(dirname "$1")"', orphan = true, desc = "Reveal", for = "linux" }
+  { run = 'thunar "$(dirname "$1")"', orphan = true, desc = "Reveal", for = "linux" }
 ]
 
-okular = [
-  { run = 'okular "$@"', orphan = true, desc = "Okular", for = "linux" }
+zathura = [
+  { run = 'zathura "$@"', orphan = true, desc = "Zathura", for = "linux" }
+]
+
+papers = [
+  { run = 'papers "$@"', orphan = true, desc = "Annotate PDF", for = "linux" }
 ]
 
 play = [
@@ -37,12 +41,11 @@ play = [
 ]
 
 image = [
-  { run = 'imv "$@"', orphan = true, desc = "imv", for = "linux" },
-  { run = 'xdg-open "$1"', orphan = true, desc = "Open", for = "linux" }
+  { run = 'swayimg "$@"', orphan = true, desc = "swayimg", for = "linux" }
 ]
 
 browser = [
-  { run = 'firefox "$1"', orphan = true, desc = "Firefox", for = "linux" }
+  { run = 'vivaldi "$1"', orphan = true, desc = "Vivaldi", for = "linux" }
 ]
 
 archive = [
@@ -54,7 +57,7 @@ prepend_rules = [
   { mime = "text/*", use = [ "edit", "open", "reveal" ] },
   { mime = "application/json", use = [ "edit", "open", "reveal" ] },
 
-  { mime = "application/pdf", use = [ "okular", "open", "reveal" ] },
+  { mime = "application/pdf", use = [ "zathura", "papers", "open", "reveal" ] },
 
   { mime = "image/*", use = [ "image", "open", "reveal" ] },
   { mime = "video/*", use = [ "play", "open", "reveal" ] },

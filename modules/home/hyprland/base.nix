@@ -72,7 +72,7 @@
         "$mod, E, exec, kitty -e yazi"
 
         "$mod, V, exec, vivaldi"
-        "$mod, D, exec, dolphin"
+        "$mod, D, exec, thunar"
 
         "$mod, T, exec, scratchpad-toggle"
 

@@ -23,6 +23,7 @@
     ../../../modules/home/debug.nix
     ../../../modules/home/laptop-hyprland-power.nix
     ../../../modules/home/dark.nix
+    ../../../modules/home/zathura.nix
   ];
 
   home.username = "mili";

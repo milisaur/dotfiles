@@ -21,6 +21,7 @@
     ../../../modules/home/yazi/yazi.nix
     ../../../modules/home/dark.nix
     ../../../modules/home/obs.nix
+    ../../../modules/home/zathura.nix
   ];
 
   home.username = "mili";

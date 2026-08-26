@@ -109,6 +109,16 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    # Images
+    swayimg
+    # File manager
+    thunar
+    tumbler
+    gvfs
+    # Archives
+    file-roller
+    # pdf annotation
+    papers
     adwaita-icon-theme
     signal-desktop
     libreoffice-qt
