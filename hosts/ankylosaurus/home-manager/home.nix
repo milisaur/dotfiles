@@ -22,6 +22,9 @@
     ../../../modules/home/dark.nix
     ../../../modules/home/obs.nix
     ../../../modules/home/zathura.nix
+    ../../../modules/home/hyprland/hyprsunset.nix
+    ../../../modules/home/quarto.nix
+    ../../../modules/home/android.nix
   ];
 
   home.username = "mili";

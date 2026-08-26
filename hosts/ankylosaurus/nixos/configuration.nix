@@ -10,6 +10,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../../modules/system/common.nix
+    ../../../modules/system/android.nix
   ];
 
   networking.hostName = "ankylosaurus";
