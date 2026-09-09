@@ -139,6 +139,7 @@
     wtype
     gnome-clocks
     vlc
+    weechat
   ];
 
   system.stateVersion = "25.11";

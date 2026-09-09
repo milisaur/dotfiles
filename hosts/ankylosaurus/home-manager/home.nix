@@ -25,6 +25,8 @@
     ../../../modules/home/hyprland/hyprsunset.nix
     ../../../modules/home/quarto.nix
     ../../../modules/home/android.nix
+    ../../../modules/home/java.nix
+    ./robocode.nix
   ];
 
   home.username = "mili";

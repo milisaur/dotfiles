@@ -14,6 +14,11 @@
     zsh
     wev
 
+    gh
+    bind
+    usbutils
+    parted
+
     yazi
     rofi
     papirus-icon-theme
@@ -57,7 +62,7 @@
     python3
     pyright
 
-    jdk21
+    jdk25
     asm-simulator
     hades
     mars-mips
