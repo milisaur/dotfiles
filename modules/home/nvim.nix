@@ -54,8 +54,8 @@
       toggleterm = {
         enable = true;
         settings = {
-          size = 20; # Höhe des Terminals
-          direction = "vertical"; # Split nach rechts/unten
+          size = 50;
+          direction = "vertical";
           open_mapping = {
             __raw = "'<c-t>'";
           };
@@ -68,7 +68,7 @@
           persist_size = true;
           persist_mode = true;
           close_on_exit = true;
-          shell = "${pkgs.zsh}/bin/zsh"; # Nutzt deine ZSH
+          shell = "${pkgs.zsh}/bin/zsh";
         };
       };
 
@@ -179,14 +179,12 @@
     };
 
     extraConfigLua = ''
-       -- Öffnet Terminal im rechten Split und wechselt sofort hinein
-       vim.api.nvim_set_keymap('n', '<leader>t', ':vsplit | terminal<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>t', ':vsplit | terminal<CR>', { noremap = true, silent = true })
 
-      -- Fenster-Navigation mit Ctrl + hjkl
-       vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Fenster nach links' })
-       vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Fenster nach unten' })
-       vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Fenster nach oben' })
-       vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Fenster nach rechts' })
+      vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Fenster nach links' })
+      vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Fenster nach unten' })
+      vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Fenster nach oben' })
+      vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Fenster nach rechts' })
     '';
 
     extraPackages = with pkgs; [
