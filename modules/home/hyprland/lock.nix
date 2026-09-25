@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, hostName, ... }:
 
 let
-  wallpaper = ../../../assets/wallpapers/main.jpg;
+  wallpaper = ../../../assets/wallpapers + "/${hostName}/lock.jpg";
 in
 {
   home.packages = with pkgs; [

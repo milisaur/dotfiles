@@ -29,6 +29,7 @@
         "mako"
         "nm-applet --indicator"
         "hyprpaper"
+        "wallpaper-control restore"
         "hypridle"
         "gnome-keyring-daemon --start --components=secrets"
         "ckb-next -b"
@@ -87,6 +88,10 @@
         ",Print, exec, grim -g \"$(slurp)\" - | wl-copy"
         "SHIFT, Print, exec, sh -c 'mkdir -p ~/Pictures/Screenshots && grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'"
         ",Insert, exec, sh -c 'mkdir -p ~/Pictures/Screenshots && grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'"
+
+        "$mod, W, exec, wallpaper-control next"
+        "$mod SHIFT, W, exec, wallpaper-control previous"
+        "$mod CTRL, W, exec, wallpaper-control random"
 
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"

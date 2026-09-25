@@ -90,6 +90,7 @@
             "yaml"
             "bash"
             "go"
+            "java"
           ];
         };
       };
@@ -118,6 +119,32 @@
           };
 
           pyright.enable = true;
+
+          jdtls = {
+            enable = true;
+
+            settings = {
+              java = {
+                configuration = {
+                  runtimes = [
+                    {
+                      name = "JavaSE-17";
+                      path = "${pkgs.jdk17.home}";
+                    }
+                    {
+                      name = "JavaSE-21";
+                      path = "${pkgs.jdk21.home}";
+                    }
+                    {
+                      name = "JavaSE-25";
+                      path = "${pkgs.jdk25.home}";
+                      default = true;
+                    }
+                  ];
+                };
+              };
+            };
+          };
           r_language_server = {
             enable = true;
             package = null;
@@ -252,7 +279,10 @@
         callback = {
           __raw = ''
             function()
-              require("conform").format({ async = false })
+              require("conform").format({
+                async = false,
+                lsp_format = "fallback",
+              })
             end
           '';
         };
