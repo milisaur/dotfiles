@@ -75,6 +75,8 @@
     brightnessctl
 
     anki
+
+    steam-run
   ];
 
   programs.direnv.enable = true;
