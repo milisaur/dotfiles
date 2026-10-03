@@ -1,4 +1,15 @@
 {pkgs, ...}: let
+  java8 = pkgs.writeShellScriptBin "java8" ''
+    exec ${pkgs.jdk8}/bin/java "$@"
+  '';
+
+  javac8 = pkgs.writeShellScriptBin "javac8" ''
+    exec ${pkgs.jdk8}/bin/javac "$@"
+  '';
+
+  jshell8 = pkgs.writeShellScriptBin "jshell8" ''
+    exec ${pkgs.jdk8}/bin/jshell "$@"
+  '';
   java21 = pkgs.writeShellScriptBin "java21" ''
     exec ${pkgs.jdk21}/bin/java "$@"
   '';
@@ -21,6 +32,16 @@
 
   jshell25 = pkgs.writeShellScriptBin "jshell25" ''
     exec ${pkgs.jdk25}/bin/jshell "$@"
+  '';
+
+  jdk8Shell = pkgs.writeShellScriptBin "jdk8" ''
+    export JAVA_HOME="${pkgs.jdk8}"
+    export PATH="$JAVA_HOME/bin:$PATH"
+
+    echo "Java 8 environment"
+    java -version
+
+    exec ${pkgs.zsh}/bin/zsh
   '';
 
   jdk21Shell = pkgs.writeShellScriptBin "jdk21" ''
@@ -48,6 +69,10 @@ in {
     pkgs.jdk25
 
     # Explicit version commands
+    java8
+    javac8
+    jshell8
+
     java21
     javac21
     jshell21
