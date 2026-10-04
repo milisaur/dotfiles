@@ -77,6 +77,9 @@
     anki
 
     steam-run
+
+    maven
+    tree
   ];
 
   programs.direnv.enable = true;
