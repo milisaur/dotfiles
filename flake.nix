@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -13,6 +15,7 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     nixvim,
     ...
@@ -20,6 +23,11 @@
     system = "x86_64-linux";
 
     pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
+    pkgs-unstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };
@@ -41,7 +49,7 @@
         inherit system;
 
         specialArgs = {
-          inherit inputs hostName mars-mips asm-simulator hades;
+          inherit inputs hostName mars-mips asm-simulator hades pkgs-unstable;
         };
 
         modules = [
@@ -54,7 +62,7 @@
             home-manager.useUserPackages = true;
 
             home-manager.extraSpecialArgs = {
-              inherit inputs hostName mars-mips asm-simulator hades;
+              inherit inputs hostName mars-mips asm-simulator hades pkgs-unstable;
             };
 
             home-manager.users.mili =

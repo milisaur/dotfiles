@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }: {
@@ -136,7 +137,7 @@
     udiskie
     pavucontrol
     cryptsetup
-    joplin-desktop
+    pkgs-unstable.joplin-desktop
     wtype
     gnome-clocks
     vlc

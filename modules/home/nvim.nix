@@ -128,7 +128,7 @@
                 configuration = {
                   runtimes = [
                     {
-                      name = "JavaSE-8";
+                      name = "JavaSE-1.8";
                       path = "${pkgs.jdk8.home}";
                     }
                     {
