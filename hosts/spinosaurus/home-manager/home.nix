@@ -25,6 +25,7 @@
     ../../../modules/home/dark.nix
     ../../../modules/home/zathura.nix
     ../../../modules/home/hyprland/hyprsunset.nix
+    ../../../modules/home/java.nix
   ];
 
   home.username = "mili";
