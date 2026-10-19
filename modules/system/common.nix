@@ -8,7 +8,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openconnect
+    ];
+  };
 
   time.timeZone = "Europe/Berlin";
 
@@ -142,6 +147,8 @@
     gnome-clocks
     vlc
     weechat
+    openconnect
+    networkmanagerapplet
   ];
 
   system.stateVersion = "25.11";
