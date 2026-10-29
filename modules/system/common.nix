@@ -149,6 +149,7 @@
     weechat
     openconnect
     networkmanagerapplet
+    libation
   ];
 
   system.stateVersion = "25.11";
