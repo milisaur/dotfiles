@@ -29,6 +29,7 @@
     ../../../modules/home/editing.nix
     ./robocode.nix
     ../../../modules/home/writing.nix
+    ../../../modules/home/joplin.nix
   ];
 
   home.username = "mili";
