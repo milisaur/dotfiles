@@ -28,6 +28,7 @@
     ../../../modules/home/java.nix
     ../../../modules/home/writing.nix
     ../../../modules/home/joplin.nix
+    ../../../modules/home/zettlr.nix
   ];
 
   home.username = "mili";

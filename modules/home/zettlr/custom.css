@@ -1,0 +1,56 @@
+/* MILISAUR - ZETTLR NEAR BLACK */
+
+body.dark .cm-editor {
+  /* Farben */
+  --zettlr-editor-primary-color: #d7dce0;
+  --zettlr-editor-secondary-color: #9ca5ab;
+  --zettlr-editor-scroller-color: #d7dce0;
+  --zettlr-editor-scroller-bg: #111315;
+  --zettlr-editor-selection-color: #33393e;
+  --zettlr-editor-highlight-color: #252a2e;
+  --zettlr-editor-accent-color: #91b8a1;
+  --zettlr-editor-accent-bg: #252a2e;
+
+  /* Typografie */
+  --zettlr-editor-font: "Noto Sans", sans-serif;
+  --zettlr-editor-code-font: "JetBrains Mono", monospace;
+  --zettlr-editor-font-size: 16px;
+  --zettlr-editor-line-height: 1.7;
+}
+
+/* Dezentere Markdown-Formatierung */
+body.dark .cm-editor .cm-quote {
+  color: #b3bbc0;
+}
+
+body.dark .cm-editor .cm-strong {
+  color: #d7dce0;
+}
+/* ==========================================
+   MILISAUR - APPLICATION INTERFACE
+   ========================================== */
+
+/* Obere Menüleiste */
+body.dark #menubar {
+  background-color: #0d0f10 !important;
+  color: #d7dce0 !important;
+}
+
+/* Werkzeugleiste und Tabs */
+body.dark #toolbar,
+body.dark .tab-container {
+  background-color: #151719 !important;
+}
+
+/* Dateimanager links */
+body.dark #file-tree,
+body.dark .tree-item,
+body.dark .file-manager-filter {
+  background-color: #17191c !important;
+  color: #c5cbd0 !important;
+}
+
+/* Rechte Seitenleiste */
+body.dark #sidebar {
+  background-color: #17191c !important;
+}
