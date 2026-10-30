@@ -92,8 +92,8 @@ html, body {
 
 .sidebar {
 	background-color: var(--ctp-frappe-crust) !important;
-	text-transform: uppercase;
-	font-weight: var(--bolder);
+	text-transform: none;
+	font-weight: 500;
 }
 
 /* Hide "All notes" icon
@@ -595,4 +595,96 @@ div.modal-dialog {
 
 .modal-dialog > .item-list > * {
 	color: var(--ctp-frappe-text) !important;
+}
+/* ==========================================
+   MILISAUR - MARKDOWN EDITOR
+   ========================================== */
+
+/* Neuer CodeMirror-Editor */
+.cm-editor .cm-content {
+  font-family: "Noto Sans", sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+
+/* Codeblöcke */
+.cm-editor .cm-jn-code-block {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 14px !important;
+}
+
+/* Älterer CodeMirror-Editor */
+.CodeMirror pre.CodeMirror-line {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+
+/* Hervorgehobene Markdown-Überschriften */
+.cm-header-1 {
+  color: var(--ctp-frappe-blue) !important;
+}
+
+.cm-header-2 {
+  color: var(--ctp-frappe-lavender) !important;
+}
+
+.cm-header-3 {
+  color: var(--ctp-frappe-green) !important;
+}
+/* ==========================================
+   MILISAUR - NEAR BLACK THEME
+   ========================================== */
+
+:root {
+  /* Backgrounds */
+  --ctp-frappe-base: #111315;
+  --ctp-frappe-mantle: #0d0f10;
+  --ctp-frappe-crust: #090a0b;
+
+  /* Surfaces */
+  --ctp-frappe-surface0: #1c2023;
+  --ctp-frappe-surface1: #252a2e;
+  --ctp-frappe-surface2: #33393e;
+
+  /* Hover and selection */
+  --ctp-frappe-overlay0: #3e454b;
+  --ctp-frappe-overlay1: #4e565d;
+  --ctp-frappe-overlay2: #626b73;
+
+  /* Text */
+  --ctp-frappe-text: #d7dce0;
+  --ctp-frappe-subtext1: #b3bbc0;
+  --ctp-frappe-subtext0: #9ca5ab;
+
+  /* Accent colors */
+  --ctp-frappe-blue: #91b8a1;
+  --ctp-frappe-lavender: #91b8a1;
+  --ctp-frappe-mauve: #c5b08b;
+  --ctp-frappe-pink: #cba0a0;
+
+  /* Fonts */
+  --font-face: "Noto Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+/* ==========================================
+   MILISAUR - EDITOR TYPOGRAPHY
+   ========================================== */
+
+/* CodeMirror 6 */
+.cm-editor .cm-scroller,
+.cm-editor .cm-content {
+  font-family: "Noto Sans", sans-serif !important;
+  font-size: 16px !important;
+}
+
+.cm-editor .cm-line {
+  line-height: 1.65 !important;
+}
+
+/* CodeMirror 5 - fallback */
+.CodeMirror,
+.CodeMirror pre.CodeMirror-line {
+  font-family: "Noto Sans", sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
 }
