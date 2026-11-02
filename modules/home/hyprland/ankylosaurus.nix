@@ -16,6 +16,7 @@
 
     input = {
       kb_layout = "de";
+      kb_variant = "neo_qwertz";
       follow_mouse = 1;
     };
 
