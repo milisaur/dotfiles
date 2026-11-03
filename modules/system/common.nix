@@ -150,6 +150,8 @@
     vlc
     weechat
     openconnect
+    kdePackages.konsole
+    prettier
     networkmanagerapplet
     libation
     inputs.readest.packages.${pkgs.stdenv.hostPlatform.system}.default
