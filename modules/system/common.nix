@@ -45,6 +45,14 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  nix.settings.extra-substituters = [
+    "https://readest.cachix.org"
+  ];
+
+  nix.settings.extra-trusted-public-keys = [
+    "readest.cachix.org-1:KvKAePcZZCZB8ytFIAOGdgN3VRdmFHGRMHqMVckbt5c="
+  ];
+
   services.printing.enable = true;
   services.printing.drivers = with pkgs; [
     epson-escpr
