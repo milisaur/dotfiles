@@ -3,6 +3,7 @@
   pkgs,
   pkgs-unstable,
   lib,
+  inputs,
   ...
 }: {
   boot.loader.systemd-boot.enable = true;
@@ -151,7 +152,15 @@
     openconnect
     networkmanagerapplet
     libation
+    inputs.readest.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
+  nix.settings = {
+    substituters = ["https://readest.cachix.org"];
+
+    trusted-public-keys = [
+      "readest.cachix.org-1:KvKAePcZZCZB8ytFIAOGdgN3VRdmFHGRMHqMVckbt5c="
+    ];
+  };
   system.stateVersion = "25.11";
 }

@@ -10,6 +10,9 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nixvim.url = "github:nix-community/nixvim/nixos-26.05";
+    readest = {
+      url = "git+https://github.com/readest/readest.git?submodules=1";
+    };
   };
 
   outputs = inputs @ {
