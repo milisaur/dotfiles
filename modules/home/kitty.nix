@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.kitty = {
     enable = true;
 
@@ -17,4 +15,7 @@
       scrollback_lines = 10000;
     };
   };
+  xdg.configFile."xfce4/helpers.rc".text = ''
+    TerminalEmulator=kitty
+  '';
 }
