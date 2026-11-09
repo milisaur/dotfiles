@@ -16,7 +16,7 @@
     ];
   };
 
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "America/Chicago";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -106,7 +106,7 @@
   programs.firefox.enable = true;
 
   xdg.mime.defaultApplications = {
-    "text/html" = "vivaldi";
+    "text/html" = "vivaldi-stable.desktop";
     "x-scheme-handler/http" = "vivaldi-stable.desktop";
     "x-scheme-handler/https" = "vivaldi-stable.desktop";
     "x-scheme-handler/about" = "org.vivaldi-stable.desktop";
@@ -157,6 +157,7 @@
     gnome-clocks
     vlc
     weechat
+    appimage-run
     openconnect
     kdePackages.konsole
     prettier
