@@ -4,6 +4,16 @@
     runtimeInputs = [pkgs.coreutils];
     text = builtins.readFile ./waybar/generation.sh;
   };
+  dashboardScript = pkgs.writeShellApplication {
+    name = "waybar-dashboard";
+    runtimeInputs = with pkgs; [
+      coreutils
+      procps
+      systemd
+      rofi
+    ];
+    text = builtins.readFile ./waybar/dashboard.sh;
+  };
 in {
   programs.waybar = {
     enable = true;
@@ -78,6 +88,9 @@ in {
           return-type = "json";
           interval = 300;
           tooltip = true;
+
+          on-click-release = "${dashboardScript}/bin/waybar-dashboard";
+          exec-on-event = false;
         };
 
         tray = {
