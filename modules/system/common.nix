@@ -20,6 +20,8 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
+  programs.nix-ld.enable = true;
+
   services.xserver.enable = true;
   services.displayManager.sddm.enable = false;
   services.greetd = {
@@ -117,6 +119,8 @@
     powerline-fonts
     nerd-fonts.meslo-lg
     font-awesome
+    lmmath
+    stix-two
   ];
 
   nixpkgs.config.permittedInsecurePackages = [

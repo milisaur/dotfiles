@@ -9,6 +9,7 @@
     ../../../modules/system/power.nix
     ../../../modules/system/nvidia-prime.nix
     ../../../modules/system/laptop.nix
+    ../../../modules/system/gigabyte-keyboard.nix
   ];
 
   networking.hostName = "spinosaurus";

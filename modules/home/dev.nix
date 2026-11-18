@@ -62,6 +62,8 @@
     python3
     pyright
 
+    nodejs_24
+
     jdk25
     asm-simulator
     hades
