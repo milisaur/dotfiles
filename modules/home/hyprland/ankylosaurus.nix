@@ -7,6 +7,8 @@
       "DP-2,1680x1050@74.89,5760x0,1"
     ];
 
+    #     "ckb-next -b"
+
     workspace = [
       "1, monitor:DP-1, default:true"
       "2, monitor:DP-3, default:true"
