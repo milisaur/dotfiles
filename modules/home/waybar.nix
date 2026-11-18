@@ -1,6 +1,10 @@
-{ ... }:
-
-{
+{pkgs, ...}: let
+  generationScript = pkgs.writeShellApplication {
+    name = "waybar-generation";
+    runtimeInputs = [pkgs.coreutils];
+    text = builtins.readFile ./waybar/generation.sh;
+  };
+in {
   programs.waybar = {
     enable = true;
 
@@ -18,6 +22,7 @@
         ];
 
         modules-right = [
+          "custom/nixos-generation"
           "network"
           "pulseaudio"
           "cpu"
@@ -41,16 +46,16 @@
           format-ethernet = "󰈀  Ethernet";
           format-disconnected = "󰖪  Offline";
           tooltip-format = "{ifname} via {gwaddr}";
-          on-click = "nm-applet";  
+          on-click = "nm-applet";
         };
 
         pulseaudio = {
           format = "{icon}  {volume}%";
           format-muted = "󰝟  muted";
           format-icons = {
-            default = [ "" "" "" ];
+            default = ["" "" ""];
           };
-          on-click = "pavucontrol";       
+          on-click = "pavucontrol";
         };
 
         cpu = {
@@ -68,6 +73,13 @@
           format-warning = "󰁺  {capacity}%";
         };
 
+        "custom/nixos-generation" = {
+          exec = "${generationScript}/bin/waybar-generation";
+          return-type = "json";
+          interval = 300;
+          tooltip = true;
+        };
+
         tray = {
           spacing = 10;
         };
@@ -75,78 +87,78 @@
     };
 
     style = ''
-     * {
-       font-family: "JetBrainsMono Nerd Font";
-       font-size: 13px;
-       min-height: 0;
-       border: none;
-       border-radius: 0;
-      }
+      * {
+        font-family: "JetBrainsMono Nerd Font";
+        font-size: 13px;
+        min-height: 0;
+        border: none;
+        border-radius: 0;
+       }
 
-      window#waybar {
-        background: rgba(15, 15, 15, 0.88);
-        color: #e6e6e6;
-        margin: 6px 10px;
-      }
+       window#waybar {
+         background: rgba(15, 15, 15, 0.88);
+         color: #e6e6e6;
+         margin: 6px 10px;
+       }
 
-      #workspaces {
-       margin: 6px 8px;
-      }
+       #workspaces {
+        margin: 6px 8px;
+       }
 
-      #workspaces button {
-       padding: 0 12px;
-       margin: 0 5px;
-       background: transparent;
-       color: #bdbdbd;
-       border-radius: 10px;
-     }
-
-      #workspaces button.active {
-       background: rgba(255, 255, 255, 0.18);
-       color: #ffffff;
-     }
-
-      #workspaces button:hover {
-        background: rgba(255, 255, 255, 0.08);
-        color: #ffffff;
-      }
-
-      #clock,
-      #network,
-      #pulseaudio,
-      #cpu,
-      #memory,
-      #battery,
-      #tray {
-        margin: 6px 6px;
-        padding: 0 16px;
+       #workspaces button {
+        padding: 0 12px;
+        margin: 0 5px;
+        background: transparent;
+        color: #bdbdbd;
         border-radius: 10px;
-        background: rgba(255, 255, 255, 0.08);
-     }
-
-     #clock {
-       font-weight: 600;
       }
 
-      #battery.warning {
-        color: #ffcc66;
-      }
-
-     #battery.critical {
-        color: #ff6b6b;
-      }
-
-      #battery.charging {
-        color: #8bd5ca;
-      }
-
-      tooltip {
-        background: rgba(30, 30, 30, 0.95);
+       #workspaces button.active {
+        background: rgba(255, 255, 255, 0.18);
         color: #ffffff;
-        border-radius: 8px;
-        padding: 8px;
       }
-    '';
 
+       #workspaces button:hover {
+         background: rgba(255, 255, 255, 0.08);
+         color: #ffffff;
+       }
+
+       #clock,
+       #network,
+       #pulseaudio,
+       #custom-nixos-generation
+       #cpu,
+       #memory,
+       #battery,
+       #tray {
+         margin: 6px 6px;
+         padding: 0 16px;
+         border-radius: 10px;
+         background: rgba(255, 255, 255, 0.08);
+      }
+
+      #clock {
+        font-weight: 600;
+       }
+
+       #battery.warning {
+         color: #ffcc66;
+       }
+
+      #battery.critical {
+         color: #ff6b6b;
+       }
+
+       #battery.charging {
+         color: #8bd5ca;
+       }
+
+       tooltip {
+         background: rgba(30, 30, 30, 0.95);
+         color: #ffffff;
+         border-radius: 8px;
+         padding: 8px;
+       }
+    '';
   };
 }
