@@ -1,9 +1,10 @@
-{ pkgs, hostName, ... }:
-
-let
-  wallpaper = ../../../assets/wallpapers + "/${hostName}/lock.jpg";
-in
 {
+  pkgs,
+  hostName,
+  ...
+}: let
+  wallpaper = ../../../assets/wallpapers + "/${hostName}/lock.png";
+in {
   home.packages = with pkgs; [
     hyprlock
   ];
